@@ -13,7 +13,7 @@ export const Problem: React.FC = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
-    <section ref={containerRef} className="relative py-32 md:py-48 px-6 md:px-12 bg-[#020617] overflow-hidden">
+    <section id="about" ref={containerRef} className="relative py-32 md:py-48 px-6 md:px-12 bg-[#020617] overflow-hidden">
       {/* Subtle blue gradient background to match reference */}
       <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-[#0f172a] to-transparent opacity-20 pointer-events-none" />
       <motion.div 

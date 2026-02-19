@@ -17,6 +17,18 @@ export const Header: React.FC = () => {
     }
   });
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+    const id = href.replace('#', '');
+    const target = document.getElementById(id);
+    if (target) {
+      const headerOffset = 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <motion.header
@@ -38,6 +50,7 @@ export const Header: React.FC = () => {
             <a
               key={item.label}
               href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
               className="text-xs font-bold font-['Space_Mono'] uppercase tracking-widest hover:text-yellow-500 transition-colors relative group"
             >
               <span className="text-yellow-500 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 inline-block mr-1">/</span>
@@ -64,7 +77,7 @@ export const Header: React.FC = () => {
             <a
               key={item.label}
               href={item.href}
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleNavClick(e, item.href)}
               className="text-4xl font-bold uppercase tracking-tighter font-['Oswald'] hover:text-yellow-500 transition-colors"
             >
               {item.label}
