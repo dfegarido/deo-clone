@@ -47,18 +47,17 @@ export const Hero: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="inline-block px-3 py-1 border border-white/30 rounded-full text-xs font-['Space_Mono'] font-bold uppercase tracking-wider text-white/80 backdrop-blur-md"
              >
-                Digital Growth Agency
+                Performance Growth Partner
              </motion.span>
           </div>
-          <h1 className="text-6xl md:text-8xl lg:text-[10rem] leading-[0.9] font-bold font-['Oswald'] uppercase tracking-tighter mb-8 mix-blend-overlay text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-500">
-            We Build<br />Brands
+          <h1 className="text-5xl md:text-7xl lg:text-[7rem] leading-[0.9] font-bold font-['Oswald'] uppercase tracking-tighter mb-8 mix-blend-overlay text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-500">
+            Own the Inbox.<br />Scale With Precision.
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-gray-300 font-['Manrope'] font-light tracking-wide mix-blend-screen leading-relaxed">
-            A premium digital growth agency specializing in paid media, creative strategy, and direct-to-consumer scaling.
+            We are a performance-driven email and data infrastructure partner built for brands that demand measurable growth.
           </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <Button>View Our Work</Button>
-            <Button variant="outline">Start A Project</Button>
+          <div className="flex justify-center">
+            <Button>Get In Touch</Button>
           </div>
         </motion.div>
       </div>

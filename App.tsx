@@ -6,6 +6,7 @@ import { Problem } from './components/Problem';
 import { Work } from './components/Work';
 import { Services } from './components/Services';
 import { StickyScroll } from './components/StickyScroll';
+import { TrustedBy } from './components/TrustedBy';
 import { Footer } from './components/Footer';
 
 // Smooth scroll implementation helper
@@ -20,11 +21,12 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <Marquee />
+        <TrustedBy />
         <Problem />
-        <StickyScroll />
-        <Work />
         <Services />
+        <StickyScroll />
+        <Marquee />
+        <Work />
       </main>
       <Footer />
     </div>

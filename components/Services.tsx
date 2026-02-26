@@ -40,30 +40,39 @@ export const Services: React.FC = () => {
   const [activeService, setActiveService] = useState(SERVICES[0]);
 
   return (
-    <section id="services" className="py-24 bg-neutral-900 text-white px-6 md:px-12 relative overflow-hidden">
+    <section id="services" className="py-16 sm:py-20 md:py-24 bg-neutral-900 text-white px-4 sm:px-6 md:px-12 relative overflow-hidden">
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-24">
             
           {/* Left Column: List */}
           <div className="w-full lg:w-1/2 z-10">
-            <div className="mb-16">
+            <div className="mb-8 sm:mb-12 md:mb-16">
                 <motion.h2 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-xs font-bold font-['Space_Mono'] uppercase tracking-[0.4em] text-yellow-500 mb-4"
+                    className="text-[10px] sm:text-xs font-bold font-['Space_Mono'] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-yellow-500 mb-3 sm:mb-4"
                 >
-                    Scope of Work
+                    What We Do
                 </motion.h2>
                 <motion.h3 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="text-5xl md:text-7xl font-['Oswald'] font-bold uppercase"
+                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-['Oswald'] font-bold uppercase leading-tight"
                 >
-                    Our Expertise
+                    Performance Infrastructure for Modern Brands
                 </motion.h3>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="text-neutral-400 font-['Manrope'] text-sm sm:text-base md:text-lg mt-4 sm:mt-6 max-w-xl leading-relaxed"
+                >
+                    Evolutra combines owned distribution, advanced targeting, and full-funnel optimization to drive measurable revenue growth.
+                </motion.p>
             </div>
 
             <div className="flex flex-col">
@@ -72,26 +81,28 @@ export const Services: React.FC = () => {
                   key={service.id}
                   className="group relative border-b border-white/10"
                   onMouseEnter={() => setActiveService(service)}
+                  onClick={() => setActiveService(service)}
                 >
-                  <div className={`py-10 cursor-pointer transition-all duration-300 ${activeService.id === service.id ? 'pl-8' : 'pl-0 hover:pl-4'}`}>
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-6">
-                            <span className={`text-xs font-['Space_Mono'] transition-colors duration-300 ${activeService.id === service.id ? 'text-yellow-500' : 'text-neutral-600'}`}>
+                  <div className={`py-5 sm:py-7 md:py-10 cursor-pointer transition-all duration-300 ${activeService.id === service.id ? 'pl-4 sm:pl-6 md:pl-8' : 'pl-0 hover:pl-4'}`}>
+                    <div className="flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-3 sm:gap-4 md:gap-6 min-w-0">
+                            <span className={`text-[10px] sm:text-xs font-['Space_Mono'] transition-colors duration-300 shrink-0 ${activeService.id === service.id ? 'text-yellow-500' : 'text-neutral-600'}`}>
                                 0{service.id}
                             </span>
-                            <h4 className={`text-3xl md:text-5xl font-['Oswald'] uppercase font-bold transition-colors duration-300 ${activeService.id === service.id ? 'text-white' : 'text-neutral-500 group-hover:text-neutral-300'}`}>
+                            <h4 className={`text-base sm:text-lg md:text-xl lg:text-3xl font-['Oswald'] uppercase font-bold transition-colors duration-300 leading-tight ${activeService.id === service.id ? 'text-white' : 'text-neutral-500 group-hover:text-neutral-300'}`}>
                                 {service.title}
                             </h4>
                         </div>
                         
                         {/* Arrow indicator */}
                         <motion.div
+                            className="shrink-0"
                             animate={{ 
                                 opacity: activeService.id === service.id ? 1 : 0,
                                 x: activeService.id === service.id ? 0 : -20 
                             }}
                         >
-                            <ArrowRight className="text-yellow-500" />
+                            <ArrowRight className="text-yellow-500 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                         </motion.div>
                     </div>
                     
@@ -101,17 +112,17 @@ export const Services: React.FC = () => {
                         animate={{ 
                             height: activeService.id === service.id ? 'auto' : 0,
                             opacity: activeService.id === service.id ? 1 : 0,
-                            marginTop: activeService.id === service.id ? 24 : 0
+                            marginTop: activeService.id === service.id ? 16 : 0
                         }}
                         className="overflow-hidden"
                     >
-                        <p className="font-['Manrope'] text-neutral-400 max-w-md leading-relaxed">
+                        <p className="font-['Manrope'] text-neutral-400 max-w-md leading-relaxed text-sm sm:text-base">
                             {service.description}
                         </p>
                         
-                        <div className="mt-6 flex items-center gap-2 text-yellow-500 text-xs font-['Space_Mono'] uppercase tracking-widest font-bold">
+                        <div className="mt-4 sm:mt-6 flex items-center gap-2 text-yellow-500 text-[10px] sm:text-xs font-['Space_Mono'] uppercase tracking-widest font-bold">
                             <span>Explore Capabilities</span>
-                            <div className="h-[1px] w-8 bg-yellow-500" />
+                            <div className="h-[1px] w-6 sm:w-8 bg-yellow-500" />
                         </div>
                     </motion.div>
                   </div>
@@ -129,7 +140,7 @@ export const Services: React.FC = () => {
           </div>
 
           {/* Right Column: Visual (Sticky) */}
-          <div className="hidden lg:block w-full lg:w-1/2 relative h-[80vh] sticky top-20">
+          <div className="hidden lg:block w-full lg:w-1/2 relative h-[90vh] sticky top-20">
              <div className="w-full h-full relative rounded-lg overflow-hidden border border-white/10">
                 {/* Noise overlay */}
                 <div className="absolute inset-0 z-20 opacity-20 pointer-events-none mix-blend-overlay" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E")` }} />

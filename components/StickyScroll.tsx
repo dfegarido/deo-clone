@@ -3,19 +3,29 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 const CONTENT = [
   {
-    title: "Strategic Vision",
-    description: "We don't just build websites; we construct digital ecosystems designed for scale. Our data-driven approach ensures every pixel serves a purpose, driving measurable growth for your brand.",
+    title: "Identify High-Intent Audiences",
+    description: "We analyze behavioral and transactional signals to find consumers actively in-market.",
     img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
   },
   {
-    title: "Visual Identity",
-    description: "Stand out in a crowded marketplace. We forge memorable brand identities that resonate emotionally and convert rationally, using high-end aesthetics and motion design.",
+    title: "Deploy Dedicated Email Campaigns",
+    description: "Your brand receives focused share-of-voice with optimized creative and segmentation.",
     img: "https://images.unsplash.com/photo-1558655146-d09347e0c766?q=80&w=2564&auto=format&fit=crop"
   },
   {
-    title: "Technical Excellence",
-    description: "Speed, security, and scalability are non-negotiable. Our engineering team builds robust, SEO-optimized platforms ready for millions of users without compromising on performance.",
+    title: "De-Anonymize & Retarget",
+    description: "Website tagging technology identifies engaged visitors before checkout.",
     img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop"
+  },
+  {
+    title: "Amplify Through AI & Multi-Channel",
+    description: "Qualified leads are nurtured via email, SMS, and AI-driven follow-up.",
+    img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2670&auto=format&fit=crop"
+  },
+  {
+    title: "Optimize Relentlessly",
+    description: "We track revenue, ROAS, and LTV — not vanity metrics.",
+    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop"
   }
 ];
 
@@ -27,7 +37,7 @@ export const StickyScroll: React.FC = () => {
   });
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-neutral-900">
+    <section ref={targetRef} className="relative h-[500vh] bg-neutral-900">
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col md:flex-row">
         
         {/* Left Side: Text Content */}
