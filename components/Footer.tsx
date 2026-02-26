@@ -52,8 +52,8 @@ export const Footer: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mb-24"
         >
-          <a
-            href="https://wvm-suhm-euw"
+          <button
+            type="button"
             className="group inline-flex items-center gap-3 bg-[#3E6CFF] hover:bg-[#2d5be6] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(62,108,255,0.4)]"
           >
             <svg width="24" height="18" viewBox="0 0 63 49" fill="none" className="transition-transform group-hover:translate-x-1">
@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
               <path d="M48 22H0.5V27H62.5V22C46.5 22 42.8333 7.66667 43 0H37.5C37.5 14.8 44.1667 20.5 48 22Z" fill="currentColor" />
             </svg>
             <span>Become a Partner</span>
-          </a>
+          </button>
         </motion.div>
 
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-12 text-sm text-gray-500 font-['Space_Mono'] uppercase tracking-wider">
