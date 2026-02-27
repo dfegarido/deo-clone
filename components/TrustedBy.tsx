@@ -34,6 +34,7 @@ const PARTNERS: Partner[] = [
   { name: 'Warby Parker', image: `${BASE}assets/warby-parker-logo.png` },
   { name: 'Grounded Footwear', image: `${BASE}assets/grounded-footwear-logo.png`, bgType: 'light' },
   { name: "The Farmer's Dog", image: `${BASE}assets/farmers-dog-logo.webp`, bgType: 'colored' },
+  { name: 'Warby Parker', image: `${BASE}assets/warby-parker-alt-logo.jpg`, bgType: 'light' },
 ];
 
 const getImageClasses = (bgType?: BgType) => {
@@ -100,7 +101,7 @@ export const TrustedBy: React.FC<TrustedByProps> = ({ onGetInTouch }) => {
         {/* Partners Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
           {PARTNERS.map((partner, index) => (
-            <PartnerCard key={partner.name} partner={partner} index={index} />
+            <PartnerCard key={index} partner={partner} index={index} />
           ))}
 
           {/* "Your Logo Here" CTA Card */}
