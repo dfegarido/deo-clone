@@ -1,39 +1,54 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const PARTNERS = [
+// bgType: 'transparent' = dark logo on transparent bg (use brightness-0 invert)
+//         'light' = dark logo on white/light bg (use invert + grayscale + mix-blend-screen)
+//         'colored' = white text on colored bg (use grayscale only)
+type BgType = 'transparent' | 'light' | 'colored';
+
+interface Partner {
+  name: string;
+  image: string;
+  bgType?: BgType;
+}
+
+const PARTNERS: Partner[] = [
   // Row 1
-  { name: 'AliExpress', image: 'https://doemedia.com/wp-content/uploads/2024/12/aliexpress-1.webp' },
-  { name: 'Akira', image: 'https://doemedia.com/wp-content/uploads/2024/12/akira.png' },
-  { name: 'Engine', image: 'https://doemedia.com/wp-content/uploads/2025/06/engine-doe-media-partner.png' },
-  { name: 'Katzkin', image: 'https://doemedia.com/wp-content/uploads/2024/12/katzkin.png' },
-  { name: 'Pure Green', image: 'https://doemedia.com/wp-content/uploads/2024/12/pure-green-logo-doe-media.png' },
-  { name: 'GirlsCrew', image: 'https://doemedia.com/wp-content/uploads/2024/12/girlscrew-e1700189255805.png' },
+  { name: 'Vivint', image: '/assets/65674479dfb2953b600fa625_65660278bb41ad573002f5e0_Vivint2_website-logo - Mockup 1 - Mockup 2#2804373.png' },
+  { name: 'ADT', image: '/assets/ADT_Security_Services_Logo.svg.png', bgType: 'colored' },
+  { name: 'CarShield', image: '/assets/CarShield_Company_Logo.png', bgType: 'light' },
+  { name: 'HelloFresh', image: '/assets/hellofresh-logo.png' },
+  { name: 'Liberty Mutual', image: '/assets/Liberty_Mutual-Logo.wine.png' },
+  { name: 'Life Line', image: '/assets/life-line-logo-300x145.png' },
   // Row 2
-  { name: 'HB', image: 'https://doemedia.com/wp-content/uploads/2024/12/HB-logo-partners.png' },
-  { name: 'Get Maine Lobster', image: 'https://doemedia.com/wp-content/uploads/2024/12/getmainelobster.png' },
-  { name: 'Moon Cheese', image: 'https://doemedia.com/wp-content/uploads/2024/12/mooncheese-e1733857129275.png' },
-  { name: 'Hammonds', image: 'https://doemedia.com/wp-content/uploads/2024/12/hammonds.png' },
-  { name: 'Level 9 Sports', image: 'https://doemedia.com/wp-content/uploads/2024/12/level9sports.png' },
-  { name: 'Paul Fredrick', image: 'https://doemedia.com/wp-content/uploads/2025/02/paul-fredrick-logo.png' },
+  { name: 'Saatva', image: '/assets/logo_saatva_mattress.jpg', bgType: 'light' },
+  { name: 'Renewal by Andersen', image: '/assets/logo-rba-horizontal-black-(1).png' },
+  { name: 'Noom', image: '/assets/Noom-Logo.png' },
+  { name: 'Quicken Loans', image: '/assets/Quicken-loans-stacked.webp' },
+  { name: "Sam's Club", image: '/assets/Sams-Club-Logo.png' },
+  { name: 'TruGreen', image: '/assets/TruGreen_Primary_Logo_(R)_FullColor_RGB_(2).png' },
   // Row 3
-  { name: 'Chirp', image: 'https://doemedia.com/wp-content/uploads/2024/12/chirp-1.png' },
-  { name: 'Triller', image: 'https://doemedia.com/wp-content/uploads/2025/02/triller-logo.png' },
-  { name: 'Layer 1', image: 'https://doemedia.com/wp-content/uploads/2025/06/Layer-1-1024x339.png' },
-  { name: 'WoolX', image: 'https://doemedia.com/wp-content/uploads/2024/12/woolx.png' },
-  { name: 'MVM', image: 'https://doemedia.com/wp-content/uploads/2024/12/mvm-1-1.png' },
-  { name: 'Power Crunch', image: 'https://doemedia.com/wp-content/uploads/2024/12/power-crunch-logo-doe-media.png' },
-  // Row 4
-  { name: 'Hanks', image: 'https://doemedia.com/wp-content/uploads/2024/12/hanks.png' },
-  { name: 'Cymbiotika', image: 'https://doemedia.com/wp-content/uploads/2026/01/cymbiotika-doe-partners.png' },
-  { name: 'The Tox', image: 'https://doemedia.com/wp-content/uploads/2025/02/the-tox-logo.png' },
-  { name: "Malley's Chocolate", image: 'https://doemedia.com/wp-content/uploads/2024/12/malleys-chocolate-doe-media-partner.png' },
-  { name: 'Hanoush', image: 'https://doemedia.com/wp-content/uploads/2024/12/hanoush.png' },
-  { name: 'Movado', image: 'https://doemedia.com/wp-content/uploads/2024/12/movado-1.png' },
-  { name: 'Blenders', image: 'https://doemedia.com/wp-content/uploads/2026/01/blenders-logo.png' },
+  { name: 'Uber', image: '/assets/Uber_logo_2018.png' },
+  { name: 'Warby Parker', image: '/assets/Warby_Parker_logo.svg.png' },
+  { name: 'Grounded Footwear', image: '/assets/images (2).png', bgType: 'light' },
+  { name: "The Farmer's Dog", image: '/assets/logo-a36f2a.webp', bgType: 'colored' },
 ];
 
-const PartnerCard: React.FC<{ partner: typeof PARTNERS[0]; index: number }> = ({ partner, index }) => (
+const getImageClasses = (bgType?: BgType) => {
+  switch (bgType) {
+    case 'light':
+      // White bg with dark logo: invert turns bg black (disappears with screen blend), logo turns white
+      return 'max-h-12 sm:max-h-14 md:max-h-16 w-auto object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300 invert grayscale mix-blend-screen';
+    case 'colored':
+      // Colored bg with white text: just grayscale it
+      return 'max-h-12 sm:max-h-14 md:max-h-16 w-auto object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300 grayscale';
+    default:
+      // Transparent bg with dark logo: standard approach
+      return 'max-h-12 sm:max-h-14 md:max-h-16 w-auto object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300 brightness-0 invert';
+  }
+};
+
+const PartnerCard: React.FC<{ partner: Partner; index: number }> = ({ partner, index }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +60,7 @@ const PartnerCard: React.FC<{ partner: typeof PARTNERS[0]; index: number }> = ({
       src={partner.image}
       alt={partner.name}
       loading="lazy"
-      className="max-h-12 sm:max-h-14 md:max-h-16 w-auto object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
+      className={getImageClasses(partner.bgType)}
     />
   </motion.div>
 );
