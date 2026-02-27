@@ -10,6 +10,7 @@ interface Partner {
   name: string;
   image: string;
   bgType?: BgType;
+  scale?: number; // per-logo visual scale factor (default 1)
 }
 
 const BASE = import.meta.env.BASE_URL;
@@ -17,27 +18,27 @@ const BASE = import.meta.env.BASE_URL;
 const PARTNERS: Partner[] = [
   // Row 1
   { name: 'Vivint', image: `${BASE}assets/vivint-logo.png` },
-  { name: 'ADT', image: `${BASE}assets/adt-logo.png`, bgType: 'colored' },
+  { name: 'ADT', image: `${BASE}assets/adt-logo.png`, bgType: 'colored', scale: 0.8 },
   { name: 'CarShield', image: `${BASE}assets/carshield-logo.png`, bgType: 'light' },
   { name: 'HelloFresh', image: `${BASE}assets/hellofresh-logo.png` },
-  { name: 'Liberty Mutual', image: `${BASE}assets/liberty-mutual-logo.png` },
-  { name: 'Life Line', image: `${BASE}assets/lifeline-logo.png` },
+  { name: 'Liberty Mutual', image: `${BASE}assets/liberty-mutual-logo.png`, scale: 0.9 },
+  { name: 'Life Line', image: `${BASE}assets/lifeline-logo.png`, scale: 1.3 },
   // Row 2
-  { name: 'Saatva', image: `${BASE}assets/saatva-logo.jpg`, bgType: 'light' },
+  { name: 'Saatva', image: `${BASE}assets/saatva-logo.jpg`, bgType: 'light', scale: 1.1 },
   { name: 'Renewal by Andersen', image: `${BASE}assets/rba-logo.png` },
-  { name: 'Noom', image: `${BASE}assets/noom-logo.png` },
-  { name: 'Quicken Loans', image: `${BASE}assets/quicken-loans-logo.webp` },
+  { name: 'Noom', image: `${BASE}assets/noom-logo.png`, scale: 0.75 },
+  { name: 'Quicken Loans', image: `${BASE}assets/quicken-loans-logo.webp`, scale: 0.8 },
   { name: "Sam's Club", image: `${BASE}assets/sams-club-logo.png` },
   { name: 'TruGreen', image: `${BASE}assets/trugreen-logo.png` },
   // Row 3
-  { name: 'Uber', image: `${BASE}assets/uber-logo.png` },
-  { name: 'Warby Parker', image: `${BASE}assets/warby-parker-logo.png` },
-  { name: 'Grounded Footwear', image: `${BASE}assets/grounded-footwear-logo.png`, bgType: 'light' },
-  { name: "The Farmer's Dog", image: `${BASE}assets/farmers-dog-logo.webp`, bgType: 'colored' },
+  { name: 'Uber', image: `${BASE}assets/uber-logo.png`, scale: 1.15 },
+  { name: 'Warby Parker', image: `${BASE}assets/warby-parker-logo.png`, scale: 1.15 },
+  { name: 'Grounded Footwear', image: `${BASE}assets/grounded-footwear-logo.png`, bgType: 'light', scale: 1.25 },
+  { name: "The Farmer's Dog", image: `${BASE}assets/farmers-dog-logo.webp`, bgType: 'colored', scale: 0.75 },
   { name: 'Warby Parker', image: `${BASE}assets/warby-parker-alt-logo.jpg`, bgType: 'light' },
 ];
 
-const IMG_BASE = 'max-w-[80%] max-h-10 sm:max-h-11 md:max-h-12 w-auto object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300';
+const IMG_BASE = 'max-w-[80%] max-h-14 sm:max-h-16 md:max-h-16 w-auto object-contain opacity-50 group-hover:opacity-100 transition-all duration-300';
 
 const getImageClasses = (bgType?: BgType) => {
   switch (bgType) {
@@ -63,6 +64,7 @@ const PartnerCard: React.FC<{ partner: Partner; index: number }> = ({ partner, i
       alt={partner.name}
       loading="lazy"
       className={getImageClasses(partner.bgType)}
+      style={partner.scale ? { transform: `scale(${partner.scale})` } : undefined}
     />
   </motion.div>
 );

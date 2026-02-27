@@ -25,7 +25,7 @@ export const Contact: React.FC<ContactProps> = ({ onBack }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-  };
+    };
 
   return (
     <section className="min-h-screen bg-[#0a0a0f] text-white pt-24 pb-20 px-6 md:px-12 relative overflow-hidden">
@@ -208,7 +208,7 @@ export const Contact: React.FC<ContactProps> = ({ onBack }) => {
                   onChange={handleChange}
                   placeholder="Share your goals, challenges, or anything you'd like us to know..."
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#2D5F52] focus:ring-2 focus:ring-[#2D5F52]/20 outline-none transition-all resize-none"
-                />
+          />
               </div>
 
               {/* Submit Button */}

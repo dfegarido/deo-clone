@@ -200,8 +200,8 @@ export const StickyScroll: React.FC = () => {
                           alt={partner.name}
                           title={partner.name}
                           className="w-8 h-8 md:w-9 md:h-9 object-contain opacity-50 hover:opacity-100 transition-opacity duration-200"
-                          loading="lazy"
-                        />
+                            loading="lazy"
+                          />
                       ))}
                     </div>
                   </div>
@@ -242,12 +242,12 @@ export const StickyScroll: React.FC = () => {
                  style={{ opacity }}
                  className="absolute inset-0 w-full h-full"
                >
-                <motion.img
-                   style={{ scale }}
-                   src={item.img}
-                   alt={item.title}
+                 <motion.img
+                    style={{ scale }}
+                    src={item.img}
+                    alt={item.title}
                    className="w-full h-full object-cover"
-                />
+                 />
                  {/* Vignette Overlay */}
                  <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#020a07]/50 to-[#020a07]" />
                </motion.div>
