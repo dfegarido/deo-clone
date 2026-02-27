@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-const TEXT = "A world-class full-funnel Marketing Platform providing scalable performance marketing solutions.";
+const TEXT = "We control the distribution, target with precision, and generate measurable affiliate growth — not attribution noise.";
 
 // Split text into words, each word into characters
 const WORDS = TEXT.split(' ');
