@@ -18,7 +18,7 @@ export const Problem: React.FC = () => {
       <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-[#0d2219] to-transparent opacity-20 pointer-events-none" />
       <motion.div 
         style={{ y }}
-        className="absolute -top-1/2 -right-1/4 w-[1000px] h-[1000px] bg-[#276454]/10 rounded-full blur-[120px] pointer-events-none" 
+        className="absolute -top-1/2 -right-1/4 w-[1000px] h-[1000px] bg-[#2D5F52]/10 rounded-full blur-[120px] pointer-events-none" 
       />
 
       <div className="container mx-auto relative z-10">
@@ -33,12 +33,12 @@ export const Problem: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="mb-8"
             >
-                <span className="text-[#39C89C] font-['Space_Mono'] text-xs font-bold uppercase tracking-[0.2em]">
-                    The Problem
+                <span className="text-[#C4A24B] font-['Space_Mono'] text-xs font-bold uppercase tracking-[0.2em]">
+                    [ The Problem ]
                 </span>
             </motion.div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-5xl lg:text-[5rem] xl:text-[6rem] leading-[0.9] text-white mb-8 md:mb-12">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9] text-white mb-8 md:mb-12">
               <motion.span 
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -88,7 +88,7 @@ export const Problem: React.FC = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="pl-0 md:pl-8 lg:pl-12 md:border-l md:border-[#276454]/30"
+                className="pl-0 md:pl-8 lg:pl-12 md:border-l md:border-[#2D5F52]/30"
              >
                 <ul className="text-base md:text-lg lg:text-xl text-neutral-300 font-['Manrope'] leading-relaxed mb-8 md:mb-12 flex flex-col gap-3 md:gap-4">
                     {[
@@ -99,7 +99,7 @@ export const Problem: React.FC = () => {
                         "Lower CAC at scale",
                     ].map((item, i) => (
                         <li key={i} className="flex items-center gap-3">
-                            <span className="w-2 h-2 rounded-full bg-[#39C89C] shrink-0" />
+                            <span className="w-2 h-2 rounded-full bg-[#C4A24B] shrink-0" />
                             {item}
                         </li>
                     ))}
@@ -117,7 +117,7 @@ export const Problem: React.FC = () => {
                     transition={{ duration: 0.6, delay: 0.8 }}
                     className="inline-block"
                 >
-                    <span className="text-white font-bold text-base md:text-lg lg:text-xl border-b-2 border-[#39C89C] pb-1">
+                    <span className="text-white font-bold text-base md:text-lg lg:text-xl border-b-2 border-[#C4A24B] pb-1">
                         And we've built ours for scale.
                     </span>
                 </motion.div>

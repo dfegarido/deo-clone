@@ -2,7 +2,11 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from './ui/Button';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onGetInTouch: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onGetInTouch }) => {
   const { scrollY } = useScroll();
   // Parallax y-axis
   const y = useTransform(scrollY, [0, 500], [0, 200]);
@@ -13,17 +17,11 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-[#041210]">
-      {/* Background Image Container */}
+      {/* Background */}
       <motion.div 
         style={{ y, scale }}
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 bg-[#041210]"
       >
-         {/* High-res dark background image */}
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center grayscale brightness-[0.4]" />
-        
-        {/* Dark Gradient Overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#041210]/80 via-[#041210]/40 to-[#041210]/90" />
-
         {/* Noise Texture Overlay for Premium Feel */}
         <div 
             className="absolute inset-0 opacity-[0.15] mix-blend-overlay pointer-events-none"
@@ -50,14 +48,14 @@ export const Hero: React.FC = () => {
                 Performance Growth Partner
              </motion.span>
           </div>
-          <h1 className="text-5xl md:text-7xl lg:text-[7rem] leading-[0.9] font-bold font-['Oswald'] uppercase tracking-tighter mb-8 mix-blend-overlay text-transparent bg-clip-text bg-gradient-to-b from-[#39C89C] to-[#276454]">
+          <h1 className="text-5xl md:text-7xl lg:text-[7rem] leading-[0.9] font-bold font-['Oswald'] uppercase tracking-tighter mb-8 text-transparent bg-clip-text bg-gradient-to-b from-[#e8d5a3] via-white to-[#a8e6cf]">
             Own the Inbox.<br />Scale With Precision.
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-gray-300 font-['Manrope'] font-light tracking-wide mix-blend-screen leading-relaxed">
+          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 font-['Manrope'] font-light tracking-wide leading-relaxed">
             We are a performance-driven email and data infrastructure partner built for brands that demand measurable growth.
           </p>
           <div className="flex justify-center">
-            <Button>Get In Touch</Button>
+            <Button onClick={onGetInTouch}>Get In Touch</Button>
           </div>
         </motion.div>
       </div>

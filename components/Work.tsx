@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Sparkles, ArrowRight } from 'lucide-react';
 
 interface CaseStudy {
   brand: string;
@@ -9,7 +8,6 @@ interface CaseStudy {
   stats: { val: string; text: string }[];
   leftImage: string;
   rightImage: string;
-  caseStudyLink: string;
 }
 
 const CASE_STUDIES: CaseStudy[] = [
@@ -27,7 +25,6 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     leftImage: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop",
     rightImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop",
-    caseStudyLink: "#",
   },
   {
     brand: 'Advertiser #2',
@@ -43,7 +40,6 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     leftImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop",
     rightImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
-    caseStudyLink: "#",
   },
   {
     brand: 'Advertiser #3',
@@ -59,7 +55,6 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     leftImage: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop",
     rightImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
-    caseStudyLink: "#",
   },
   {
     brand: 'Advertiser #4',
@@ -75,7 +70,6 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     leftImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
     rightImage: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop",
-    caseStudyLink: "#",
   },
   {
     brand: 'Advertiser #5',
@@ -91,7 +85,6 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     leftImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop",
     rightImage: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=500&auto=format&fit=crop",
-    caseStudyLink: "#",
   },
 ];
 
@@ -121,44 +114,44 @@ const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
       className="relative w-full max-w-[1920px] mx-auto min-h-[800px] flex justify-center items-center perspective-[1000px]"
     >
       {/* Left Image */}
-      <motion.div
-        style={{ x: leftX, rotate: leftRotate }}
-        className="absolute left-[5%] md:left-[10%] w-[45%] md:w-[35%] h-[500px] md:h-[700px] z-20 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl hidden md:block will-change-transform"
-      >
-        <div className="relative w-full h-full">
-          <img
+            <motion.div 
+                style={{ x: leftX, rotate: leftRotate }}
+                className="absolute left-[5%] md:left-[10%] w-[45%] md:w-[35%] h-[500px] md:h-[700px] z-20 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl hidden md:block will-change-transform"
+            >
+                <div className="relative w-full h-full">
+                    <img 
             src={study.leftImage}
-            alt="Coast"
-            className="w-full h-full object-cover brightness-75 scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
-        </div>
-      </motion.div>
+                        alt="Coast" 
+                        className="w-full h-full object-cover brightness-75 scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
+                </div>
+            </motion.div>
 
       {/* Right Image */}
-      <motion.div
-        style={{ x: rightX, rotate: rightRotate }}
-        className="absolute right-[5%] md:right-[10%] w-[45%] md:w-[35%] h-[500px] md:h-[700px] z-20 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl hidden md:block will-change-transform"
-      >
-        <div className="relative w-full h-full">
-          <img
+            <motion.div 
+                style={{ x: rightX, rotate: rightRotate }}
+                className="absolute right-[5%] md:right-[10%] w-[45%] md:w-[35%] h-[500px] md:h-[700px] z-20 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl hidden md:block will-change-transform"
+            >
+                <div className="relative w-full h-full">
+                    <img 
             src={study.rightImage}
-            alt="Architecture"
-            className="w-full h-full object-cover brightness-75 scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-l from-black/60 to-transparent" />
-        </div>
-      </motion.div>
+                        alt="Architecture" 
+                        className="w-full h-full object-cover brightness-75 scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-l from-black/60 to-transparent" />
+                </div>
+            </motion.div>
 
       {/* Center Content */}
-      <motion.div
+            <motion.div 
         style={{ opacity: centerOpacity, scale: centerScale }}
-        className="relative z-30 max-w-2xl mx-auto text-center px-6 flex flex-col items-center"
-      >
-        {/* Brand Logo/Icon */}
-        <div className="flex justify-center mb-8">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-black shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                className="relative z-30 max-w-2xl mx-auto text-center px-6 flex flex-col items-center"
+            >
+                {/* Brand Logo/Icon */}
+                <div className="flex justify-center mb-8">
+                    <div className="flex items-center gap-3">
+                        <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-black shadow-[0_0_20px_rgba(255,255,255,0.3)]">
               <svg
                 width="24"
                 height="24"
@@ -170,24 +163,24 @@ const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
                 strokeLinejoin="round"
               >
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-              </svg>
-            </div>
+                            </svg>
+                        </div>
             <span className="text-5xl font-['Oswald'] font-bold tracking-tight text-white">
               {study.brand}
             </span>
-          </div>
-        </div>
+                    </div>
+                </div>
 
-        <h3 className="text-xs font-['Space_Mono'] uppercase tracking-[0.2em] font-bold text-[#39C89C] mb-6">
+        <h3 className="text-xs font-['Space_Mono'] uppercase tracking-[0.2em] font-bold text-[#C4A24B] mb-6">
           {study.subtitle}
-        </h3>
+                </h3>
 
-        <p className="text-neutral-300 mb-10 leading-relaxed text-sm md:text-base max-w-lg mx-auto">
+                <p className="text-neutral-300 mb-10 leading-relaxed text-sm md:text-base max-w-lg mx-auto">
           {study.description}
-        </p>
+                </p>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 w-full mb-10">
+                {/* Stats Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 w-full mb-10">
           {study.stats.map((item, i) => (
             <div
               key={i}
@@ -199,18 +192,11 @@ const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
               <div className="text-[9px] text-neutral-400 uppercase leading-tight font-['Space_Mono'] font-bold">
                 {item.text}
               </div>
-            </div>
-          ))}
-        </div>
+                        </div>
+                    ))}
+                </div>
 
-        <a
-          href={study.caseStudyLink}
-          className="bg-[#276454] hover:bg-[#39C89C] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs transition-all flex items-center gap-3 mx-auto group shadow-[0_0_30px_rgba(57,200,156,0.3)] hover:shadow-[0_0_50px_rgba(57,200,156,0.6)] hover:scale-105"
-        >
-          <Sparkles size={16} className="animate-pulse" />
-          <span>View Case Study</span>
-        </a>
-      </motion.div>
+            </motion.div>
     </div>
   );
 };
@@ -222,7 +208,7 @@ export const Work: React.FC = () => {
       className="relative py-32 bg-[#071a13] overflow-hidden border-t border-white/10"
     >
       {/* Background Ambience */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#276454]/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#2D5F52]/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -230,15 +216,15 @@ export const Work: React.FC = () => {
             <motion.span 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                className="text-xs font-bold font-['Space_Mono'] uppercase tracking-[0.4em] text-[#39C89C] mb-4 block"
+                className="text-xs font-bold font-['Space_Mono'] uppercase tracking-[0.2em] text-[#C4A24B] mb-4 block"
             >
-                Selected Work
+                [ Selected Work ]
             </motion.span>
             <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-5xl md:text-8xl lg:text-[7rem] font-['Oswald'] font-bold text-white uppercase leading-[0.9]"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Oswald'] font-bold text-white uppercase leading-[0.9]"
             >
             Trusted by 2,000+{' '}
             <br />
@@ -255,19 +241,6 @@ export const Work: React.FC = () => {
           ))}
         </div>
 
-        {/* More Work Link */}
-        <div className="mt-24 flex justify-center">
-          <a
-            href="#"
-            className="group flex items-center gap-2 text-white font-['Space_Mono'] uppercase tracking-widest text-xs hover:text-[#39C89C] transition-colors"
-          >
-                <span>View All Projects</span>
-            <ArrowRight
-              size={14}
-              className="group-hover:translate-x-1 transition-transform"
-            />
-            </a>
-        </div>
       </div>
     </section>
   );

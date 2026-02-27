@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Mail, Target, Palette, Database, Bot } from 'lucide-react';
 import { SERVICES } from '../constants';
+
+// Map service IDs to icons
+const SERVICE_ICONS: Record<number, React.FC<{ className?: string }>> = {
+  1: Mail,
+  2: Target,
+  3: Palette,
+  4: Database,
+  5: Bot,
+};
 
 const SlicedImage: React.FC<{ src: string }> = ({ src }) => {
   const slices = 5; // Number of vertical slices
@@ -51,16 +60,16 @@ export const Services: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-[10px] sm:text-xs font-bold font-['Space_Mono'] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-[#39C89C] mb-3 sm:mb-4"
+                    className="text-xs font-bold font-['Space_Mono'] uppercase tracking-[0.2em] text-[#C4A24B] mb-3 sm:mb-4"
                 >
-                    What We Do
+                    [ What We Do ]
                 </motion.h2>
                 <motion.h3 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-['Oswald'] font-bold uppercase leading-tight"
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Oswald'] font-bold uppercase leading-tight"
                 >
                     Performance Infrastructure for Modern Brands
                 </motion.h3>
@@ -86,9 +95,9 @@ export const Services: React.FC = () => {
                   <div className={`py-5 sm:py-7 md:py-10 cursor-pointer transition-all duration-300 ${activeService.id === service.id ? 'pl-4 sm:pl-6 md:pl-8' : 'pl-0 hover:pl-4'}`}>
                     <div className="flex items-center justify-between gap-2">
                         <div className="flex items-center gap-3 sm:gap-4 md:gap-6 min-w-0">
-                            <span className={`text-[10px] sm:text-xs font-['Space_Mono'] transition-colors duration-300 shrink-0 ${activeService.id === service.id ? 'text-[#39C89C]' : 'text-neutral-600'}`}>
-                                0{service.id}
-                            </span>
+                            {React.createElement(SERVICE_ICONS[service.id] || Mail, {
+                              className: `w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-colors duration-300 ${activeService.id === service.id ? 'text-[#C4A24B]' : 'text-neutral-600'}`
+                            })}
                             <h4 className={`text-base sm:text-lg md:text-xl lg:text-3xl font-['Oswald'] uppercase font-bold transition-colors duration-300 leading-tight ${activeService.id === service.id ? 'text-white' : 'text-neutral-500 group-hover:text-neutral-300'}`}>
                                 {service.title}
                             </h4>
@@ -102,7 +111,7 @@ export const Services: React.FC = () => {
                                 x: activeService.id === service.id ? 0 : -20 
                             }}
                         >
-                            <ArrowRight className="text-[#39C89C] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+                            <ArrowRight className="text-[#C4A24B] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                         </motion.div>
                     </div>
                     
@@ -120,16 +129,16 @@ export const Services: React.FC = () => {
                             {service.description}
                         </p>
                         
-                        <div className="mt-4 sm:mt-6 flex items-center gap-2 text-[#39C89C] text-[10px] sm:text-xs font-['Space_Mono'] uppercase tracking-widest font-bold">
+                        <div className="mt-4 sm:mt-6 flex items-center gap-2 text-[#C4A24B] text-[10px] sm:text-xs font-['Space_Mono'] uppercase tracking-widest font-bold">
                             <span>Explore Capabilities</span>
-                            <div className="h-[1px] w-6 sm:w-8 bg-[#39C89C]" />
+                            <div className="h-[1px] w-6 sm:w-8 bg-[#C4A24B]" />
                         </div>
                     </motion.div>
                   </div>
                   
                   {/* Left Active Indicator Bar */}
                   <motion.div 
-                    className="absolute left-0 top-0 bottom-0 w-1 bg-[#39C89C]"
+                    className="absolute left-0 top-0 bottom-0 w-1 bg-[#C4A24B]"
                     initial={{ scaleY: 0 }}
                     animate={{ scaleY: activeService.id === service.id ? 1 : 0 }}
                     transition={{ duration: 0.3 }}

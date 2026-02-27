@@ -1,25 +1,32 @@
 import React, { useState } from 'react';
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  onGetInTouch: () => void;
+  onLogoClick: () => void;
+  currentPage: 'home' | 'contact';
+}
+
+export const Header: React.FC<HeaderProps> = ({ onGetInTouch, onLogoClick, currentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const { scrollY } = useScroll();
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() ?? 0;
-    if (latest > previous && latest > 150) {
-      setHidden(true);
-    } else {
-      setHidden(false);
-    }
-  });
-
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, label: string) => {
     e.preventDefault();
     setIsOpen(false);
+
+    // If "Get in Touch" is clicked, navigate to contact page
+    if (label.toLowerCase() === 'get in touch') {
+      onGetInTouch();
+      return;
+    }
+
+    // If on contact page, go home first then scroll
+    if (currentPage === 'contact') {
+      onLogoClick();
+      return;
+    }
+
     const id = href.replace('#', '');
     const target = document.getElementById(id);
     if (target) {
@@ -29,38 +36,38 @@ export const Header: React.FC = () => {
     }
   };
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsOpen(false);
+    onLogoClick();
+  };
+
   return (
     <>
       <motion.header
-        variants={{
-          visible: { y: 0 },
-          hidden: { y: "-100%" },
-        }}
-        animate={hidden ? "hidden" : "visible"}
-        transition={{ duration: 0.35, ease: "easeInOut" }}
-        className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-6 md:px-12 mix-blend-difference text-white"
+        className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-6 md:px-12"
       >
-        <a href="#" className="text-2xl font-bold tracking-tighter font-['Oswald'] uppercase">
-          DOE<span className="text-gray-400">CLONE</span>
+        <a href="#" onClick={handleLogoClick} className="text-2xl font-bold tracking-tight font-['Manrope'] lowercase">
+          <span className="text-[#C4A24B]">ev</span><span className="text-[#2D5F52]">olutra</span>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-8">
+        <nav className="hidden md:flex gap-8 mix-blend-difference">
           {NAV_ITEMS.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
-              className="text-xs font-bold font-['Space_Mono'] uppercase tracking-widest hover:text-[#39C89C] transition-colors relative group"
+              onClick={(e) => handleNavClick(e, item.href, item.label)}
+              className="text-xs font-bold font-['Space_Mono'] uppercase tracking-widest text-white hover:text-[#C4A24B] transition-colors relative group"
             >
-              <span className="text-[#39C89C] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 inline-block mr-1">/</span>
+              <span className="text-[#C4A24B] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 inline-block mr-1">/</span>
               {item.label}
             </a>
           ))}
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden mix-blend-difference text-white" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </motion.header>
@@ -77,8 +84,8 @@ export const Header: React.FC = () => {
             <a
               key={item.label}
               href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
-              className="text-4xl font-bold uppercase tracking-tighter font-['Oswald'] hover:text-[#39C89C] transition-colors"
+              onClick={(e) => handleNavClick(e, item.href, item.label)}
+              className="text-4xl font-bold uppercase tracking-tighter font-['Oswald'] hover:text-[#C4A24B] transition-colors"
             >
               {item.label}
             </a>

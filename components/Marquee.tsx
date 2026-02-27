@@ -82,7 +82,7 @@ const MobileIndustryCard: React.FC<{ industry: typeof INDUSTRIES[0]; index: numb
       <ul className="flex flex-col gap-2">
         {industry.stats.map((stat, idx) => (
           <li key={idx} className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-[#39C89C] shrink-0" />
+            <span className="w-2 h-2 rounded-full bg-[#C4A24B] shrink-0" />
             <span className="text-sm font-['Manrope'] font-medium text-white/90 tracking-wide">
               {stat.value}
             </span>
@@ -119,10 +119,10 @@ export const Marquee: React.FC = () => {
       
       {/* Section Header */}
       <div className="container mx-auto px-6 mb-10 md:mb-16 text-center relative z-30 pointer-events-none">
-        <h2 className="text-xs font-bold font-['Space_Mono'] uppercase tracking-[0.3em] text-neutral-500 mb-3">Industries We Scale</h2>
-        <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-['Oswald'] font-bold uppercase text-white tracking-tighter leading-tight">
+        <h2 className="text-xs font-bold font-['Space_Mono'] uppercase tracking-[0.2em] text-[#C4A24B] mb-3">[ Industries We Scale ]</h2>
+        <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Oswald'] font-bold uppercase text-white tracking-tighter leading-tight">
           Proven Across High-Performance{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#39C89C] to-[#276454]">Verticals</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C4A24B] to-[#2D5F52]">Verticals</span>
         </h3>
       </div>
 
@@ -186,7 +186,7 @@ export const Marquee: React.FC = () => {
                                     <ul className="flex flex-col gap-3">
                                         {study.stats.map((stat, idx) => (
                                             <li key={idx} className="flex items-center gap-3">
-                                                <span className="w-2 h-2 rounded-full bg-[#39C89C] shrink-0" />
+                                                <span className="w-2 h-2 rounded-full bg-[#C4A24B] shrink-0" />
                                                 <span className="text-base font-['Manrope'] font-medium text-white/90 tracking-wide">
                                                     {stat.value}
                                                 </span>
@@ -197,7 +197,7 @@ export const Marquee: React.FC = () => {
                             </div>
 
                             {/* Hover Highlight Border */}
-                            <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#39C89C]/50 rounded-xl transition-colors duration-300 pointer-events-none" />
+                            <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#C4A24B]/50 rounded-xl transition-colors duration-300 pointer-events-none" />
                         </div>
                     </div>
                 );

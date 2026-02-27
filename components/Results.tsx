@@ -36,7 +36,7 @@ export const Results: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-6xl md:text-8xl lg:text-[7rem] font-['Oswald'] font-bold text-white uppercase leading-[0.9]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Oswald'] font-bold text-white uppercase leading-[0.9]"
         >
           We drop <span className="font-serif-italic font-normal lowercase bg-gradient-to-br from-white to-neutral-400 bg-clip-text text-transparent">results.</span>
           <br />
