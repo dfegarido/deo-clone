@@ -37,17 +37,16 @@ const PARTNERS: Partner[] = [
   { name: 'Warby Parker', image: `${BASE}assets/warby-parker-alt-logo.jpg`, bgType: 'light' },
 ];
 
+const IMG_BASE = 'max-w-[80%] max-h-10 sm:max-h-11 md:max-h-12 w-auto object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300';
+
 const getImageClasses = (bgType?: BgType) => {
   switch (bgType) {
     case 'light':
-      // White bg with dark logo: invert turns bg black (disappears with screen blend), logo turns white
-      return 'max-h-12 sm:max-h-14 md:max-h-16 w-auto object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300 invert grayscale mix-blend-screen';
+      return `${IMG_BASE} invert grayscale mix-blend-screen`;
     case 'colored':
-      // Colored bg with white text: just grayscale it
-      return 'max-h-12 sm:max-h-14 md:max-h-16 w-auto object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300 grayscale';
+      return `${IMG_BASE} grayscale`;
     default:
-      // Transparent bg with dark logo: standard approach
-      return 'max-h-12 sm:max-h-14 md:max-h-16 w-auto object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300 brightness-0 invert';
+      return `${IMG_BASE} brightness-0 invert`;
   }
 };
 
@@ -57,7 +56,7 @@ const PartnerCard: React.FC<{ partner: Partner; index: number }> = ({ partner, i
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.4, delay: (index % 6) * 0.08 }}
-    className="group relative bg-white/[0.03] border border-white/[0.06] rounded-xl p-6 flex items-center justify-center hover:bg-black hover:border-[#C4A24B]/70 hover:scale-105 hover:shadow-[0_0_10px_rgba(196,162,75,0.5),0_0_30px_rgba(196,162,75,0.3),0_0_60px_rgba(196,162,75,0.2),0_0_100px_rgba(196,162,75,0.1),inset_0_0_15px_rgba(196,162,75,0.08)] transition-all duration-300 cursor-pointer"
+    className="group relative bg-white/[0.03] border border-white/[0.06] rounded-xl aspect-[3/2] flex items-center justify-center hover:bg-black hover:border-[#C4A24B]/70 hover:scale-105 hover:shadow-[0_0_10px_rgba(196,162,75,0.5),0_0_30px_rgba(196,162,75,0.3),0_0_60px_rgba(196,162,75,0.2),0_0_100px_rgba(196,162,75,0.1),inset_0_0_15px_rgba(196,162,75,0.08)] transition-all duration-300 cursor-pointer p-4"
   >
     <img
       src={partner.image}
@@ -111,7 +110,7 @@ export const TrustedBy: React.FC<TrustedByProps> = ({ onGetInTouch }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.5 }}
             onClick={onGetInTouch}
-            className="group bg-[#6366f1] border border-[#6366f1] rounded-xl p-6 flex flex-col items-center justify-center hover:bg-[#4f46e5] transition-all duration-300 cursor-pointer"
+            className="group bg-[#6366f1] border border-[#6366f1] rounded-xl aspect-[3/2] p-4 flex flex-col items-center justify-center hover:bg-[#4f46e5] transition-all duration-300 cursor-pointer"
           >
             <svg
               className="w-7 h-7 text-white/80 group-hover:text-white transition-colors duration-300 mb-2"
