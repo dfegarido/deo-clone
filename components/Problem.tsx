@@ -13,12 +13,12 @@ export const Problem: React.FC = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
-    <section id="about" ref={containerRef} className="relative py-20 sm:py-28 md:py-36 lg:py-48 px-6 md:px-12 bg-[#020617] overflow-hidden">
+    <section id="about" ref={containerRef} className="relative py-20 sm:py-28 md:py-36 lg:py-48 px-6 md:px-12 bg-[#04120e] overflow-hidden">
       {/* Subtle blue gradient background to match reference */}
-      <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-[#0f172a] to-transparent opacity-20 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-[#0d2219] to-transparent opacity-20 pointer-events-none" />
       <motion.div 
         style={{ y }}
-        className="absolute -top-1/2 -right-1/4 w-[1000px] h-[1000px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none" 
+        className="absolute -top-1/2 -right-1/4 w-[1000px] h-[1000px] bg-[#276454]/10 rounded-full blur-[120px] pointer-events-none" 
       />
 
       <div className="container mx-auto relative z-10">
@@ -33,7 +33,7 @@ export const Problem: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="mb-8"
             >
-                <span className="text-blue-500 font-['Space_Mono'] text-xs font-bold uppercase tracking-[0.2em]">
+                <span className="text-[#39C89C] font-['Space_Mono'] text-xs font-bold uppercase tracking-[0.2em]">
                     The Problem
                 </span>
             </motion.div>
@@ -88,7 +88,7 @@ export const Problem: React.FC = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="pl-0 md:pl-8 lg:pl-12 md:border-l md:border-blue-900/30"
+                className="pl-0 md:pl-8 lg:pl-12 md:border-l md:border-[#276454]/30"
              >
                 <ul className="text-base md:text-lg lg:text-xl text-neutral-300 font-['Manrope'] leading-relaxed mb-8 md:mb-12 flex flex-col gap-3 md:gap-4">
                     {[
@@ -99,7 +99,7 @@ export const Problem: React.FC = () => {
                         "Lower CAC at scale",
                     ].map((item, i) => (
                         <li key={i} className="flex items-center gap-3">
-                            <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
+                            <span className="w-2 h-2 rounded-full bg-[#39C89C] shrink-0" />
                             {item}
                         </li>
                     ))}
@@ -117,7 +117,7 @@ export const Problem: React.FC = () => {
                     transition={{ duration: 0.6, delay: 0.8 }}
                     className="inline-block"
                 >
-                    <span className="text-white font-bold text-base md:text-lg lg:text-xl border-b-2 border-blue-500 pb-1">
+                    <span className="text-white font-bold text-base md:text-lg lg:text-xl border-b-2 border-[#39C89C] pb-1">
                         And we've built ours for scale.
                     </span>
                 </motion.div>

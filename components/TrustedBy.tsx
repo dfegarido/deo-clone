@@ -99,7 +99,7 @@ const BrandItem: React.FC<{ name: string; path: string }> = ({ name, path }) => 
 
 export const TrustedBy: React.FC = () => {
   return (
-    <section className="border-b border-white/10 bg-[#0a0a1a] py-20 lg:py-24">
+    <section className="border-b border-white/10 bg-[#071a13] py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <p className="mb-10 text-center text-sm font-medium tracking-widest text-gray-500 uppercase">
           Trusted by industry leaders

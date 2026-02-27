@@ -51,9 +51,9 @@ export const Header: React.FC = () => {
               key={item.label}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="text-xs font-bold font-['Space_Mono'] uppercase tracking-widest hover:text-yellow-500 transition-colors relative group"
+              className="text-xs font-bold font-['Space_Mono'] uppercase tracking-widest hover:text-[#39C89C] transition-colors relative group"
             >
-              <span className="text-yellow-500 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 inline-block mr-1">/</span>
+              <span className="text-[#39C89C] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 inline-block mr-1">/</span>
               {item.label}
             </a>
           ))}
@@ -70,7 +70,7 @@ export const Header: React.FC = () => {
         initial={{ opacity: 0, x: "100%" }}
         animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? "0%" : "100%" }}
         transition={{ type: "tween", duration: 0.4 }}
-        className="fixed inset-0 bg-black z-40 flex flex-col justify-center items-center md:hidden"
+        className="fixed inset-0 bg-[#041210] z-40 flex flex-col justify-center items-center md:hidden"
       >
         <nav className="flex flex-col gap-8 text-center">
           {NAV_ITEMS.map((item) => (
@@ -78,7 +78,7 @@ export const Header: React.FC = () => {
               key={item.label}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="text-4xl font-bold uppercase tracking-tighter font-['Oswald'] hover:text-yellow-500 transition-colors"
+              className="text-4xl font-bold uppercase tracking-tighter font-['Oswald'] hover:text-[#39C89C] transition-colors"
             >
               {item.label}
             </a>

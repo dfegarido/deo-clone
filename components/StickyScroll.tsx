@@ -37,11 +37,11 @@ export const StickyScroll: React.FC = () => {
   });
 
   return (
-    <section ref={targetRef} className="relative h-[500vh] bg-neutral-900">
+    <section ref={targetRef} className="relative h-[500vh] bg-[#071a13]">
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col md:flex-row">
         
         {/* Left Side: Text Content */}
-        <div className="w-full md:w-1/2 h-full flex items-center justify-center px-6 md:px-20 z-10 bg-neutral-900/90 md:bg-neutral-900">
+        <div className="w-full md:w-1/2 h-full flex items-center justify-center px-6 md:px-20 z-10 bg-[#071a13]/90 md:bg-[#071a13]">
           <div className="relative w-full max-w-lg h-64 md:h-80">
             {CONTENT.map((item, index) => {
               // Calculate specific ranges for each item's visibility
@@ -71,7 +71,7 @@ export const StickyScroll: React.FC = () => {
                   style={{ opacity, y }}
                   className="absolute inset-0 flex flex-col justify-center"
                 >
-                  <h3 className="text-yellow-500 font-['Space_Mono'] font-bold uppercase tracking-widest text-sm mb-4">
+                  <h3 className="text-[#39C89C] font-['Space_Mono'] font-bold uppercase tracking-widest text-sm mb-4">
                     0{index + 1} — Process
                   </h3>
                   <h2 className="text-4xl md:text-6xl font-['Oswald'] font-bold uppercase mb-6 text-white leading-tight">
@@ -122,7 +122,7 @@ export const StickyScroll: React.FC = () => {
                     className="w-full h-full object-cover grayscale brightness-75 contrast-125"
                  />
                  {/* Vignette Overlay */}
-                 <div className="absolute inset-0 bg-gradient-to-l from-transparent via-neutral-900/20 to-neutral-900" />
+                 <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#071a13]/20 to-[#071a13]" />
                </motion.div>
              );
            })}

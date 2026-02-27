@@ -40,7 +40,7 @@ export const Services: React.FC = () => {
   const [activeService, setActiveService] = useState(SERVICES[0]);
 
   return (
-    <section id="services" className="py-16 sm:py-20 md:py-24 bg-neutral-900 text-white px-4 sm:px-6 md:px-12 relative overflow-hidden">
+    <section id="services" className="py-16 sm:py-20 md:py-24 bg-[#0a1f17] text-white px-4 sm:px-6 md:px-12 relative overflow-hidden">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-24">
             
@@ -51,7 +51,7 @@ export const Services: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-[10px] sm:text-xs font-bold font-['Space_Mono'] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-yellow-500 mb-3 sm:mb-4"
+                    className="text-[10px] sm:text-xs font-bold font-['Space_Mono'] uppercase tracking-[0.3em] sm:tracking-[0.4em] text-[#39C89C] mb-3 sm:mb-4"
                 >
                     What We Do
                 </motion.h2>
@@ -86,7 +86,7 @@ export const Services: React.FC = () => {
                   <div className={`py-5 sm:py-7 md:py-10 cursor-pointer transition-all duration-300 ${activeService.id === service.id ? 'pl-4 sm:pl-6 md:pl-8' : 'pl-0 hover:pl-4'}`}>
                     <div className="flex items-center justify-between gap-2">
                         <div className="flex items-center gap-3 sm:gap-4 md:gap-6 min-w-0">
-                            <span className={`text-[10px] sm:text-xs font-['Space_Mono'] transition-colors duration-300 shrink-0 ${activeService.id === service.id ? 'text-yellow-500' : 'text-neutral-600'}`}>
+                            <span className={`text-[10px] sm:text-xs font-['Space_Mono'] transition-colors duration-300 shrink-0 ${activeService.id === service.id ? 'text-[#39C89C]' : 'text-neutral-600'}`}>
                                 0{service.id}
                             </span>
                             <h4 className={`text-base sm:text-lg md:text-xl lg:text-3xl font-['Oswald'] uppercase font-bold transition-colors duration-300 leading-tight ${activeService.id === service.id ? 'text-white' : 'text-neutral-500 group-hover:text-neutral-300'}`}>
@@ -102,7 +102,7 @@ export const Services: React.FC = () => {
                                 x: activeService.id === service.id ? 0 : -20 
                             }}
                         >
-                            <ArrowRight className="text-yellow-500 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+                            <ArrowRight className="text-[#39C89C] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                         </motion.div>
                     </div>
                     
@@ -120,16 +120,16 @@ export const Services: React.FC = () => {
                             {service.description}
                         </p>
                         
-                        <div className="mt-4 sm:mt-6 flex items-center gap-2 text-yellow-500 text-[10px] sm:text-xs font-['Space_Mono'] uppercase tracking-widest font-bold">
+                        <div className="mt-4 sm:mt-6 flex items-center gap-2 text-[#39C89C] text-[10px] sm:text-xs font-['Space_Mono'] uppercase tracking-widest font-bold">
                             <span>Explore Capabilities</span>
-                            <div className="h-[1px] w-6 sm:w-8 bg-yellow-500" />
+                            <div className="h-[1px] w-6 sm:w-8 bg-[#39C89C]" />
                         </div>
                     </motion.div>
                   </div>
                   
                   {/* Left Active Indicator Bar */}
                   <motion.div 
-                    className="absolute left-0 top-0 bottom-0 w-1 bg-yellow-500"
+                    className="absolute left-0 top-0 bottom-0 w-1 bg-[#39C89C]"
                     initial={{ scaleY: 0 }}
                     animate={{ scaleY: activeService.id === service.id ? 1 : 0 }}
                     transition={{ duration: 0.3 }}
@@ -162,7 +162,7 @@ export const Services: React.FC = () => {
                         <SlicedImage src={activeService.image} />
                         
                         {/* Overlay Gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-transparent to-neutral-900/20 z-10" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f17]/80 via-transparent to-[#0a1f17]/20 z-10" />
                         
                         {/* Metadata overlaid on image */}
                         <div className="absolute bottom-8 left-8 z-20">

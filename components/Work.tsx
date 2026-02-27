@@ -14,8 +14,8 @@ interface CaseStudy {
 
 const CASE_STUDIES: CaseStudy[] = [
   {
-    brand: 'Engine',
-    subtitle: "DOE Empowers Engine's Lead Generation",
+    brand: 'Advertiser #1',
+    subtitle: "DOE Empowers Advertiser #1's Lead Generation",
     description: "We've developed a multi-faceted approach, leveraging precise audience targeting, compelling creative assets, and data-driven optimization across both Google and Meta to drive high-quality leads.",
     stats: [
       { val: "32%", text: "Decrease in Meta CPL" },
@@ -30,8 +30,8 @@ const CASE_STUDIES: CaseStudy[] = [
     caseStudyLink: "#",
   },
   {
-    brand: 'Vertex',
-    subtitle: "Scaling Email Revenue for Vertex",
+    brand: 'Advertiser #2',
+    subtitle: "Scaling Email Revenue for Advertiser #2",
     description: "High-volume email distribution combined with advanced segmentation turned cold lists into a predictable revenue engine, delivering consistent ROI month over month.",
     stats: [
       { val: "1.2B", text: "Emails Deployed" },
@@ -46,8 +46,8 @@ const CASE_STUDIES: CaseStudy[] = [
     caseStudyLink: "#",
   },
   {
-    brand: 'Horizon',
-    subtitle: "Retargeting & Data Monetization for Horizon",
+    brand: 'Advertiser #3',
+    subtitle: "Retargeting & Data Monetization for Advertiser #3",
     description: "We turned dormant first-party data into a high-performing retargeting engine, unlocking hidden value and driving down acquisition costs across every channel.",
     stats: [
       { val: "41%", text: "Lower CAC" },
@@ -62,8 +62,8 @@ const CASE_STUDIES: CaseStudy[] = [
     caseStudyLink: "#",
   },
   {
-    brand: 'Catalyst',
-    subtitle: "AI-Powered Lead Qualification for Catalyst",
+    brand: 'Advertiser #4',
+    subtitle: "AI-Powered Lead Qualification for Advertiser #4",
     description: "AI calling and SMS qualification dramatically increased speed-to-lead while reducing cost per acquisition across all channels.",
     stats: [
       { val: "78%", text: "Faster Lead Response" },
@@ -78,8 +78,8 @@ const CASE_STUDIES: CaseStudy[] = [
     caseStudyLink: "#",
   },
   {
-    brand: 'Apex',
-    subtitle: "Full-Funnel Campaign Execution for Apex",
+    brand: 'Advertiser #5',
+    subtitle: "Full-Funnel Campaign Execution for Advertiser #5",
     description: "End-to-end creative and campaign execution with dedicated deployments and optimized journeys built to capture attention and convert at scale.",
     stats: [
       { val: "58%", text: "Higher Engagement" },
@@ -178,7 +178,7 @@ const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
           </div>
         </div>
 
-        <h3 className="text-xs font-['Space_Mono'] uppercase tracking-[0.2em] font-bold text-blue-400 mb-6">
+        <h3 className="text-xs font-['Space_Mono'] uppercase tracking-[0.2em] font-bold text-[#39C89C] mb-6">
           {study.subtitle}
         </h3>
 
@@ -205,7 +205,7 @@ const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
 
         <a
           href={study.caseStudyLink}
-          className="bg-[#6366f1] hover:bg-[#4f46e5] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs transition-all flex items-center gap-3 mx-auto group shadow-[0_0_30px_rgba(99,102,241,0.3)] hover:shadow-[0_0_50px_rgba(99,102,241,0.6)] hover:scale-105"
+          className="bg-[#276454] hover:bg-[#39C89C] text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs transition-all flex items-center gap-3 mx-auto group shadow-[0_0_30px_rgba(57,200,156,0.3)] hover:shadow-[0_0_50px_rgba(57,200,156,0.6)] hover:scale-105"
         >
           <Sparkles size={16} className="animate-pulse" />
           <span>View Case Study</span>
@@ -219,10 +219,10 @@ export const Work: React.FC = () => {
   return (
     <section
       id="work"
-      className="relative py-32 bg-black overflow-hidden border-t border-white/10"
+      className="relative py-32 bg-[#071a13] overflow-hidden border-t border-white/10"
     >
       {/* Background Ambience */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#276454]/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -230,7 +230,7 @@ export const Work: React.FC = () => {
             <motion.span 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                className="text-xs font-bold font-['Space_Mono'] uppercase tracking-[0.4em] text-yellow-500 mb-4 block"
+                className="text-xs font-bold font-['Space_Mono'] uppercase tracking-[0.4em] text-[#39C89C] mb-4 block"
             >
                 Selected Work
             </motion.span>
@@ -259,7 +259,7 @@ export const Work: React.FC = () => {
         <div className="mt-24 flex justify-center">
           <a
             href="#"
-            className="group flex items-center gap-2 text-white font-['Space_Mono'] uppercase tracking-widest text-xs hover:text-yellow-500 transition-colors"
+            className="group flex items-center gap-2 text-white font-['Space_Mono'] uppercase tracking-widest text-xs hover:text-[#39C89C] transition-colors"
           >
                 <span>View All Projects</span>
             <ArrowRight
