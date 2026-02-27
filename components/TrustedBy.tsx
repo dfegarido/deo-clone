@@ -12,26 +12,28 @@ interface Partner {
   bgType?: BgType;
 }
 
+const BASE = import.meta.env.BASE_URL;
+
 const PARTNERS: Partner[] = [
   // Row 1
-  { name: 'Vivint', image: '/assets/65674479dfb2953b600fa625_65660278bb41ad573002f5e0_Vivint2_website-logo - Mockup 1 - Mockup 2#2804373.png' },
-  { name: 'ADT', image: '/assets/ADT_Security_Services_Logo.svg.png', bgType: 'colored' },
-  { name: 'CarShield', image: '/assets/CarShield_Company_Logo.png', bgType: 'light' },
-  { name: 'HelloFresh', image: '/assets/hellofresh-logo.png' },
-  { name: 'Liberty Mutual', image: '/assets/Liberty_Mutual-Logo.wine.png' },
-  { name: 'Life Line', image: '/assets/life-line-logo-300x145.png' },
+  { name: 'Vivint', image: `${BASE}assets/vivint-logo.png` },
+  { name: 'ADT', image: `${BASE}assets/adt-logo.png`, bgType: 'colored' },
+  { name: 'CarShield', image: `${BASE}assets/carshield-logo.png`, bgType: 'light' },
+  { name: 'HelloFresh', image: `${BASE}assets/hellofresh-logo.png` },
+  { name: 'Liberty Mutual', image: `${BASE}assets/liberty-mutual-logo.png` },
+  { name: 'Life Line', image: `${BASE}assets/lifeline-logo.png` },
   // Row 2
-  { name: 'Saatva', image: '/assets/logo_saatva_mattress.jpg', bgType: 'light' },
-  { name: 'Renewal by Andersen', image: '/assets/logo-rba-horizontal-black-(1).png' },
-  { name: 'Noom', image: '/assets/Noom-Logo.png' },
-  { name: 'Quicken Loans', image: '/assets/Quicken-loans-stacked.webp' },
-  { name: "Sam's Club", image: '/assets/Sams-Club-Logo.png' },
-  { name: 'TruGreen', image: '/assets/TruGreen_Primary_Logo_(R)_FullColor_RGB_(2).png' },
+  { name: 'Saatva', image: `${BASE}assets/saatva-logo.jpg`, bgType: 'light' },
+  { name: 'Renewal by Andersen', image: `${BASE}assets/rba-logo.png` },
+  { name: 'Noom', image: `${BASE}assets/noom-logo.png` },
+  { name: 'Quicken Loans', image: `${BASE}assets/quicken-loans-logo.webp` },
+  { name: "Sam's Club", image: `${BASE}assets/sams-club-logo.png` },
+  { name: 'TruGreen', image: `${BASE}assets/trugreen-logo.png` },
   // Row 3
-  { name: 'Uber', image: '/assets/Uber_logo_2018.png' },
-  { name: 'Warby Parker', image: '/assets/Warby_Parker_logo.svg.png' },
-  { name: 'Grounded Footwear', image: '/assets/images (2).png', bgType: 'light' },
-  { name: "The Farmer's Dog", image: '/assets/logo-a36f2a.webp', bgType: 'colored' },
+  { name: 'Uber', image: `${BASE}assets/uber-logo.png` },
+  { name: 'Warby Parker', image: `${BASE}assets/warby-parker-logo.png` },
+  { name: 'Grounded Footwear', image: `${BASE}assets/grounded-footwear-logo.png`, bgType: 'light' },
+  { name: "The Farmer's Dog", image: `${BASE}assets/farmers-dog-logo.webp`, bgType: 'colored' },
 ];
 
 const getImageClasses = (bgType?: BgType) => {
