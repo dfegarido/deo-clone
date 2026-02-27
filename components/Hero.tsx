@@ -38,11 +38,23 @@ export const Hero: React.FC<HeroProps> = ({ onGetInTouch }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="mb-6"
+          >
+            <span className="text-3xl md:text-4xl font-bold tracking-tight font-['Manrope'] lowercase">
+              <span className="text-[#C4A24B]">ev</span><span className="text-[#2D5F52]">olutra</span>
+            </span>
+          </motion.div>
+
           <div className="mb-4 overflow-hidden">
              <motion.span 
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
                 className="inline-block px-3 py-1 border border-white/30 rounded-full text-xs font-['Space_Mono'] font-bold uppercase tracking-wider text-white/80 backdrop-blur-md"
              >
                 Performance Growth Partner
