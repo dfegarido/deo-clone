@@ -36,7 +36,7 @@ export const Results: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Oswald'] font-bold text-white uppercase leading-[0.9]"
+            className="text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-['Oswald'] font-bold text-white uppercase leading-[0.9]"
         >
           We drop <span className="font-serif-italic font-normal lowercase bg-gradient-to-br from-white to-neutral-400 bg-clip-text text-transparent">results.</span>
           <br />
@@ -89,7 +89,7 @@ export const Results: React.FC = () => {
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                         </svg>
                     </div>
-                    <span className="text-5xl font-['Oswald'] font-bold tracking-tight">Engine</span>
+                    <span className="text-3xl md:text-5xl font-['Oswald'] font-bold tracking-tight">Engine</span>
                 </div>
             </div>
 

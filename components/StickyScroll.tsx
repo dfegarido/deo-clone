@@ -178,7 +178,7 @@ export const StickyScroll: React.FC = () => {
                   </div>
 
                   {/* Title */}
-                  <h2 className="text-3xl md:text-5xl font-['Oswald'] font-bold uppercase mb-4 text-white leading-tight">
+                  <h2 className="font-['DM_Sans'] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase mb-4 text-white leading-tight">
                     {item.title}
                   </h2>
 

@@ -15,9 +15,16 @@ export const Footer: React.FC<FooterProps> = ({ onBecomePartner }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Oswald'] font-bold uppercase tracking-tighter mb-8 leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#C4A24B] via-[#3d8b6e] to-[#2D5F52]"
+          className="font-['DM_Sans'] text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-bold uppercase leading-[1.2em] mb-8"
         >
-          Grow with Evolutra
+          <span style={{
+            background: 'linear-gradient(to bottom, #e8d5a3, #ffffff, #a8e6cf)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}>
+            Grow with Evolutra
+          </span>
         </motion.h2>
         
         {/* Subtitle */}

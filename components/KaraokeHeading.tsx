@@ -36,7 +36,7 @@ export const KaraokeHeading: React.FC = () => {
         >
           [ We Are Evolutra ]
         </motion.span>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Oswald'] font-bold uppercase leading-[1.1] tracking-tight">
+        <h2 className="font-['DM_Sans'] text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-bold uppercase leading-[1.2em] text-[#FFFFFF1F]">
           {WORDS.map((word, wIdx) => {
             // Reset charIndex tracking per render by computing it inline
             const wordChars = word.split('');

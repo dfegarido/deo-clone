@@ -40,9 +40,16 @@ export const Contact: React.FC<ContactProps> = ({ onBack }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-['Oswald'] font-bold tracking-tighter mb-6 leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#e8d5a3] via-[#7ec4a8] to-[#5db895] text-center"
+          className="font-['DM_Sans'] text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-bold uppercase leading-[1.2em] mb-6 text-center"
         >
-          Grow with Evolutra
+          <span style={{
+            background: 'linear-gradient(to bottom, #e8d5a3, #ffffff, #a8e6cf)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}>
+            Grow with Evolutra
+          </span>
         </motion.h2>
 
         {/* Subtitle */}

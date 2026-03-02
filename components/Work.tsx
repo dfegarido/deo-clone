@@ -165,7 +165,7 @@ const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                             </svg>
                         </div>
-            <span className="text-5xl font-['Oswald'] font-bold tracking-tight text-white">
+            <span className="text-3xl md:text-5xl font-['Oswald'] font-bold tracking-tight text-white">
               {study.brand}
             </span>
                     </div>
@@ -224,11 +224,11 @@ export const Work: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Oswald'] font-bold text-white uppercase leading-[0.9]"
+                className="font-['DM_Sans'] text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-bold uppercase leading-[1.2em] text-white"
             >
             Trusted by 2,000+{' '}
             <br />
-            <span className="font-serif-italic font-normal lowercase bg-gradient-to-br from-white to-neutral-400 bg-clip-text text-transparent">
+            <span className="font-editorial lowercase">
               leading brands
             </span>
             </motion.h2>

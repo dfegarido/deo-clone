@@ -46,7 +46,7 @@ export const Hero: React.FC<HeroProps> = ({ onGetInTouch }) => {
             className="mb-6"
           >
             <span className="text-3xl md:text-4xl font-bold tracking-tight font-['Manrope'] lowercase">
-              <span className="text-[#C4A24B]">ev</span><span className="text-[#2D5F52]">olutra</span>
+              <span className="text-white">ev</span><span className="text-white">olutra</span>
             </span>
           </motion.div>
 
@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({ onGetInTouch }) => {
                 Performance Growth Partner
              </motion.span>
           </div>
-          <h1 className="text-5xl md:text-7xl lg:text-[7rem] leading-[0.9] font-bold font-['Oswald'] uppercase tracking-tighter mb-8 text-transparent bg-clip-text bg-gradient-to-b from-[#e8d5a3] via-white to-[#a8e6cf]">
+          <h1 className="font-['DM_Sans'] text-[2.8rem] sm:text-[4rem] md:text-[5.5rem] lg:text-[7rem] font-medium leading-[0.9em] tracking-[-2px] md:tracking-[-4px] uppercase mb-8 text-transparent bg-clip-text bg-gradient-to-b from-[#e8d5a3] via-white to-[#a8e6cf]">
             Own the Inbox.<br />Scale With Precision.
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 font-['Manrope'] font-light tracking-wide leading-relaxed">

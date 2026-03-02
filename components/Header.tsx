@@ -48,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({ onGetInTouch, onLogoClick, curre
         className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-6 md:px-12"
       >
         <a href="#" onClick={handleLogoClick} className="text-2xl font-bold tracking-tight font-['Manrope'] lowercase">
-          <span className="text-[#C4A24B]">ev</span><span className="text-[#2D5F52]">olutra</span>
+          <span className="text-white">ev</span><span className="text-white">olutra</span>
         </a>
 
         {/* Desktop Nav */}

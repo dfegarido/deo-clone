@@ -94,7 +94,7 @@ export const TrustedBy: React.FC<TrustedByProps> = ({ onGetInTouch }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Oswald'] font-bold uppercase text-white tracking-tighter leading-tight mb-16 text-center"
+          className="font-['DM_Sans'] text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-bold uppercase leading-[1.2em] text-white mb-10 md:mb-16 text-center"
         >
           Some of the partners<br />we've grown.
         </motion.h2>

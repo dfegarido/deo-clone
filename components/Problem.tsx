@@ -26,25 +26,13 @@ export const Problem: React.FC = () => {
           
           {/* Left Column: Headline */}
           <div className="w-full md:w-3/5">
-            <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="mb-8"
-            >
-                <span className="text-[#C4A24B] font-['Space_Mono'] text-xs font-bold uppercase tracking-[0.2em]">
-                    [ The Problem ]
-                </span>
-            </motion.div>
-
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9] text-white mb-8 md:mb-12">
+            <h2 className="mb-8 md:mb-12">
               <motion.span 
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="block font-['Oswald'] font-bold uppercase tracking-tight"
+                className="block font-['DM_Sans'] text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-bold uppercase leading-[1.2em] text-white"
               >
                 Email Still
               </motion.span>
@@ -54,7 +42,7 @@ export const Problem: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.1 }}
-                  className="block font-['Oswald'] font-bold uppercase tracking-tight"
+                  className="block font-['DM_Sans'] text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-bold uppercase leading-[1.2em] text-white"
               >
                   Outperforms
               </motion.span>
@@ -64,7 +52,7 @@ export const Problem: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0, rotate: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.2, type: "spring", bounce: 0.4 }}
-                  className="block font-serif-italic font-normal text-white/90"
+                  className="block font-editorial text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem]"
               >
                   Every Channel.
               </motion.span>
