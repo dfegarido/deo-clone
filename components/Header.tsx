@@ -48,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({ onGetInTouch, onLogoClick, curre
         className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-6 md:px-12"
       >
         <a href="#" onClick={handleLogoClick} className="flex items-center">
-          <img src="/assets/evolutra-logo.png" alt="Evolutra" className="h-8 md:h-10 w-auto object-contain" />
+          <img src={`${import.meta.env.BASE_URL}assets/evolutra-logo.png`} alt="Evolutra" className="h-8 md:h-10 w-auto object-contain" />
         </a>
 
         {/* Desktop Nav */}

@@ -45,7 +45,7 @@ export const Hero: React.FC<HeroProps> = ({ onGetInTouch }) => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="mb-6"
           >
-            <img src="/assets/evolutra-logo.png" alt="Evolutra" className="h-10 md:h-14 w-auto object-contain mx-auto" />
+            <img src={`${import.meta.env.BASE_URL}assets/evolutra-logo.png`} alt="Evolutra" className="h-10 md:h-14 w-auto object-contain mx-auto" />
           </motion.div>
 
           <div className="mb-4 overflow-hidden">
