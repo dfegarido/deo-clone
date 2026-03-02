@@ -13,7 +13,7 @@ const INDUSTRIES = [
   },
   {
     company: "Home Services",
-    bgImage: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop",
+    bgImage: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=800&auto=format&fit=crop",
     stats: [
       { value: "120%", direction: "up" as const,  label: "Increase in Qualified Leads" },
       { value: "35%",  direction: "down" as const, label: "Decrease in Cost Per Lead" },
