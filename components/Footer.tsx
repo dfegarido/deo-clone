@@ -7,38 +7,59 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onBecomePartner }) => {
   return (
-    <footer id="contact" className="bg-[#041210] text-white pt-32 pb-12 px-6 md:px-12 border-t border-white/10">
-      <div className="container mx-auto flex flex-col items-center text-center">
-        {/* Heading */}
+    <footer
+      id="contact"
+      className="text-white overflow-hidden"
+      style={{
+        background: '#041210',
+        borderTop: '1px solid rgba(255,255,255,0.1)',
+      }}
+    >
+      <div className="container mx-auto px-6 md:px-[87px] flex flex-col items-center text-center pt-32 pb-12">
+
+        {/* Heading — DM Sans 700 56px uppercase gradient */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-['DM_Sans'] text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-bold uppercase leading-[1.2em] mb-8"
-        >
-          <span style={{
-            background: 'linear-gradient(to bottom, #e8d5a3, #ffffff, #a8e6cf)',
+          className="mb-6"
+          style={{
+            fontFamily: "'DM Sans', sans-serif",
+            fontWeight: 700,
+            fontSize: 'clamp(2rem, 4vw, 56px)',
+            lineHeight: '67px',
+            textTransform: 'uppercase',
+            textAlign: 'center',
+            backgroundImage: 'linear-gradient(180deg, #E8D5A3 0%, #FFFFFF 50%, #A8E6CF 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
-          }}>
-            Grow with Evolutra
-          </span>
+          }}
+        >
+          Grow with Evolutra
         </motion.h2>
-        
-        {/* Subtitle */}
+
+        {/* Subtitle — Manrope 400 18px #9CA3AF */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-gray-400 font-['Manrope'] max-w-xl mb-12"
+          className="mb-12"
+          style={{
+            fontFamily: "'Manrope', sans-serif",
+            fontWeight: 400,
+            fontSize: '18px',
+            lineHeight: '28px',
+            color: '#9CA3AF',
+            textAlign: 'center',
+          }}
         >
           Let's build a smarter growth engine for your brand.
         </motion.p>
 
-        {/* Apply Now Button */}
+        {/* Button — C4A24B bg, rounded-full, Manrope 700 14px letter-spacing 1.4px */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,42 +70,188 @@ export const Footer: React.FC<FooterProps> = ({ onBecomePartner }) => {
           <button
             type="button"
             onClick={onBecomePartner}
-            className="group inline-flex items-center gap-3 bg-[#C4A24B] hover:bg-[#2D5F52] text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-sm transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(196,162,75,0.4)]"
+            className="group inline-flex items-center gap-3 transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(196,162,75,0.4)] hover:bg-[#2D5F52]"
+            style={{
+              background: '#C4A24B',
+              borderRadius: '9999px',
+              paddingLeft: '32px',
+              paddingRight: '32px',
+              height: '52px',
+            }}
           >
-            <svg width="24" height="18" viewBox="0 0 63 49" fill="none" className="transition-transform group-hover:translate-x-1">
-              <path d="M48 27H0.5V22H62.5V27C46.5 27 42.8333 41.3333 43 49H37.5C37.5 34.2 44.1667 28.5 48 27Z" fill="currentColor" />
-              <path d="M48 22H0.5V27H62.5V22C46.5 22 42.8333 7.66667 43 0H37.5C37.5 14.8 44.1667 20.5 48 22Z" fill="currentColor" />
+            {/* Arrow SVG */}
+            <svg
+              width="24"
+              height="18"
+              viewBox="0 0 63 49"
+              fill="none"
+              className="transition-transform group-hover:translate-x-1"
+            >
+              <path d="M48 27H0.5V22H62.5V27C46.5 27 42.8333 41.3333 43 49H37.5C37.5 34.2 44.1667 28.5 48 27Z" fill="white" />
+              <path d="M48 22H0.5V27H62.5V22C46.5 22 42.8333 7.66667 43 0H37.5C37.5 14.8 44.1667 20.5 48 22Z" fill="white" />
             </svg>
-            <span>Become a Partner</span>
+            {/* Label — Manrope 700 14px letter-spacing 1.4px uppercase white */}
+            <span
+              style={{
+                fontFamily: "'Manrope', sans-serif",
+                fontWeight: 700,
+                fontSize: '14px',
+                lineHeight: '20px',
+                letterSpacing: '1.4px',
+                textTransform: 'uppercase',
+                color: '#FFFFFF',
+              }}
+            >
+              Become a Partner
+            </span>
           </button>
         </motion.div>
 
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-12 text-sm text-gray-500 font-['Space_Mono'] uppercase tracking-wider">
+        {/* Bottom 3-column links */}
+        <div
+          className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 pt-12"
+          style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}
+        >
+          {/* Contact */}
           <div className="flex flex-col gap-2 items-center md:items-start">
-            <h4 className="text-white font-bold mb-2 font-['Oswald'] tracking-widest">Contact</h4>
-            <a href="mailto:hello@evolutra.com" className="hover:text-white transition-colors">hello@evolutra.com</a>
-            <a href="tel:+15550000000" className="hover:text-white transition-colors">+1 (555) 000-0000</a>
+            <h4
+              style={{
+                fontFamily: "'Oswald', sans-serif",
+                fontWeight: 700,
+                fontSize: '14px',
+                lineHeight: '20px',
+                letterSpacing: '1.4px',
+                textTransform: 'uppercase',
+                color: '#FFFFFF',
+                marginBottom: '8px',
+              }}
+            >
+              Contact
+            </h4>
+            <a
+              href="mailto:hello@evolutra.com"
+              className="hover:text-white transition-colors"
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '20px',
+                letterSpacing: '0.7px',
+                textTransform: 'uppercase',
+                color: '#6B7280',
+              }}
+            >
+              hello@evolutra.com
+            </a>
+            <a
+              href="tel:+15550000000"
+              className="hover:text-white transition-colors"
+              style={{
+                fontFamily: "'Space Mono', monospace",
+                fontWeight: 400,
+                fontSize: '14px',
+                lineHeight: '20px',
+                letterSpacing: '0.7px',
+                textTransform: 'uppercase',
+                color: '#6B7280',
+              }}
+            >
+              +1 (555) 000-0000
+            </a>
           </div>
-          
+
+          {/* Social */}
           <div className="flex flex-col gap-2 items-center">
-            <h4 className="text-white font-bold mb-2 font-['Oswald'] tracking-widest">Social</h4>
-            <div className="flex gap-4">
-              <a href="#" className="hover:text-white transition-colors">Instagram</a>
-              <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-              <a href="#" className="hover:text-white transition-colors">Twitter</a>
+            <h4
+              style={{
+                fontFamily: "'Oswald', sans-serif",
+                fontWeight: 700,
+                fontSize: '14px',
+                lineHeight: '20px',
+                letterSpacing: '1.4px',
+                textTransform: 'uppercase',
+                color: '#FFFFFF',
+                marginBottom: '8px',
+              }}
+            >
+              Social
+            </h4>
+            <div className="flex gap-6">
+              {['Instagram', 'LinkedIn', 'Twitter'].map((platform) => (
+                <a
+                  key={platform}
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{
+                    fontFamily: "'Space Mono', monospace",
+                    fontWeight: 400,
+                    fontSize: '14px',
+                    lineHeight: '20px',
+                    letterSpacing: '0.7px',
+                    textTransform: 'uppercase',
+                    color: '#6B7280',
+                  }}
+                >
+                  {platform}
+                </a>
+              ))}
             </div>
           </div>
 
+          {/* Legal */}
           <div className="flex flex-col gap-2 items-center md:items-end">
-             <h4 className="text-white font-bold mb-2 font-['Oswald'] tracking-widest">Legal</h4>
-             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <h4
+              style={{
+                fontFamily: "'Oswald', sans-serif",
+                fontWeight: 700,
+                fontSize: '14px',
+                lineHeight: '20px',
+                letterSpacing: '1.4px',
+                textTransform: 'uppercase',
+                color: '#FFFFFF',
+                marginBottom: '8px',
+              }}
+            >
+              Legal
+            </h4>
+            {['Privacy Policy', 'Terms of Service'].map((link) => (
+              <a
+                key={link}
+                href="#"
+                className="hover:text-white transition-colors"
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  lineHeight: '20px',
+                  letterSpacing: '0.7px',
+                  textTransform: 'uppercase',
+                  color: '#6B7280',
+                }}
+              >
+                {link}
+              </a>
+            ))}
           </div>
         </div>
 
-        <div className="mt-20 text-neutral-800 text-[10px] font-['Space_Mono'] uppercase tracking-widest">
+        {/* Copyright — Space Mono 400 10px letter-spacing 1px #262626 */}
+        <div
+          className="mt-20"
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontWeight: 400,
+            fontSize: '10px',
+            lineHeight: '15px',
+            letterSpacing: '1px',
+            textTransform: 'uppercase',
+            color: '#262626',
+            textAlign: 'center',
+          }}
+        >
           © {new Date().getFullYear()} Evolutra. All Rights Reserved.
         </div>
+
       </div>
     </footer>
   );

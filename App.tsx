@@ -10,6 +10,7 @@ import { TrustedBy } from './components/TrustedBy';
 import { Footer } from './components/Footer';
 import { Contact } from './components/Contact';
 import { KaraokeHeading } from './components/KaraokeHeading';
+import { Solutions } from './components/Solutions';
 
 // Smooth scroll implementation helper
 // Note: In a real production app, we would use a library like 'lenis' here
@@ -18,7 +19,7 @@ import { KaraokeHeading } from './components/KaraokeHeading';
 // and Framer Motion for the parallax effects.
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'contact'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'contact' | 'solutions'>('home');
 
   const navigateToContact = () => {
     setCurrentPage('contact');
@@ -30,11 +31,22 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const navigateToSolutions = () => {
+    setCurrentPage('solutions');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // Handle browser back/forward
   useEffect(() => {
     const handlePopState = () => {
-      const page = window.location.hash === '#contact-page' ? 'contact' : 'home';
-      setCurrentPage(page);
+      const hash = window.location.hash;
+      if (hash === '#contact-page') {
+        setCurrentPage('contact');
+      } else if (hash === '#solutions-page') {
+        setCurrentPage('solutions');
+      } else {
+        setCurrentPage('home');
+      }
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
@@ -43,8 +55,10 @@ function App() {
   useEffect(() => {
     if (currentPage === 'contact') {
       window.history.pushState(null, '', '#contact-page');
+    } else if (currentPage === 'solutions') {
+      window.history.pushState(null, '', '#solutions-page');
     } else {
-      if (window.location.hash === '#contact-page') {
+      if (window.location.hash === '#contact-page' || window.location.hash === '#solutions-page') {
         window.history.pushState(null, '', '#');
       }
     }
@@ -52,7 +66,7 @@ function App() {
 
   return (
     <div className="bg-[#041210] min-h-screen text-white selection:bg-[#C4A24B] selection:text-black">
-      <Header onGetInTouch={navigateToContact} onLogoClick={navigateToHome} currentPage={currentPage} />
+      <Header onGetInTouch={navigateToContact} onLogoClick={navigateToHome} onSolutionsClick={navigateToSolutions} currentPage={currentPage} />
       
       {currentPage === 'home' ? (
         <>
@@ -65,6 +79,13 @@ function App() {
             <StickyScroll />
             <Marquee />
             <Work />
+          </main>
+          <Footer onBecomePartner={navigateToContact} />
+        </>
+      ) : currentPage === 'solutions' ? (
+        <>
+          <main>
+            <Solutions />
           </main>
           <Footer onBecomePartner={navigateToContact} />
         </>

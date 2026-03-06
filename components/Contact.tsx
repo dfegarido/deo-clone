@@ -28,11 +28,9 @@ export const Contact: React.FC<ContactProps> = ({ onBack }) => {
     };
 
   return (
-    <section className="min-h-screen bg-[#0a0a0f] text-white pt-24 pb-20 px-6 md:px-12 relative overflow-hidden">
-      {/* Purple/blue gradient glow behind heading */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-[#2a1f5e]/60 via-[#1a1040]/40 to-transparent rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-0 left-1/3 w-[400px] h-[300px] bg-[#3b2d7a]/20 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-0 right-1/3 w-[400px] h-[300px] bg-[#1e3a5f]/20 rounded-full blur-[120px] pointer-events-none" />
+    <section className="min-h-screen bg-[#041814] text-white pt-24 pb-20 px-6 md:px-12 relative overflow-hidden">
+      {/* Subtle green gradient glow behind heading */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-[#1B7E65]/20 via-[#0a2e1f]/10 to-transparent rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto max-w-4xl relative z-10">
         {/* Heading */}
@@ -40,16 +38,9 @@ export const Contact: React.FC<ContactProps> = ({ onBack }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-['DM_Sans'] text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-bold uppercase leading-[1.2em] mb-6 text-center"
+          className="font-['DM_Sans'] text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-bold uppercase leading-[1.2em] mb-6 text-center text-white"
         >
-          <span style={{
-            background: 'linear-gradient(to bottom, #e8d5a3, #ffffff, #a8e6cf)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-          }}>
-            Grow with Evolutra
-          </span>
+          Grow with Evolutra
         </motion.h2>
 
         {/* Subtitle */}
@@ -57,7 +48,7 @@ export const Contact: React.FC<ContactProps> = ({ onBack }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base text-gray-400 font-['Manrope'] max-w-2xl mx-auto mb-16 leading-relaxed text-center"
+          className="text-base text-white/80 font-['Manrope'] max-w-2xl mx-auto mb-16 leading-relaxed text-center"
         >
           Evolutra is your paradigm-shifter, radically redefining the path from customer acquisition to retention.
         </motion.p>
@@ -71,8 +62,8 @@ export const Contact: React.FC<ContactProps> = ({ onBack }) => {
         >
           {submitted ? (
             <div className="text-center py-12">
-              <div className="w-16 h-16 bg-[#2D5F52]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-8 h-8 text-[#2D5F52]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <div className="w-16 h-16 bg-[#C4A24B]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-[#C4A24B]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -96,7 +87,7 @@ export const Contact: React.FC<ContactProps> = ({ onBack }) => {
                     value={formData.firstName}
                     onChange={handleChange}
                     placeholder="John"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#2D5F52] focus:ring-2 focus:ring-[#2D5F52]/20 outline-none transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#C4A24B] focus:ring-2 focus:ring-[#C4A24B]/20 outline-none transition-all"
                   />
                 </div>
                 <div>
@@ -110,7 +101,7 @@ export const Contact: React.FC<ContactProps> = ({ onBack }) => {
                     value={formData.lastName}
                     onChange={handleChange}
                     placeholder="Doe"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#2D5F52] focus:ring-2 focus:ring-[#2D5F52]/20 outline-none transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#C4A24B] focus:ring-2 focus:ring-[#C4A24B]/20 outline-none transition-all"
                   />
                 </div>
               </div>
@@ -128,7 +119,7 @@ export const Contact: React.FC<ContactProps> = ({ onBack }) => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@company.com"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#2D5F52] focus:ring-2 focus:ring-[#2D5F52]/20 outline-none transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#C4A24B] focus:ring-2 focus:ring-[#C4A24B]/20 outline-none transition-all"
                   />
                 </div>
                 <div>
@@ -141,7 +132,7 @@ export const Contact: React.FC<ContactProps> = ({ onBack }) => {
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Company name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#2D5F52] focus:ring-2 focus:ring-[#2D5F52]/20 outline-none transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#C4A24B] focus:ring-2 focus:ring-[#C4A24B]/20 outline-none transition-all"
                   />
                 </div>
               </div>
@@ -158,7 +149,7 @@ export const Contact: React.FC<ContactProps> = ({ onBack }) => {
                     value={formData.website}
                     onChange={handleChange}
                     placeholder="https://yoursite.com"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#2D5F52] focus:ring-2 focus:ring-[#2D5F52]/20 outline-none transition-all"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#C4A24B] focus:ring-2 focus:ring-[#C4A24B]/20 outline-none transition-all"
                   />
                 </div>
                 <div>
@@ -169,7 +160,7 @@ export const Contact: React.FC<ContactProps> = ({ onBack }) => {
                     name="budget"
                     value={formData.budget}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#2D5F52] focus:ring-2 focus:ring-[#2D5F52]/20 outline-none transition-all appearance-auto bg-white"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#C4A24B] focus:ring-2 focus:ring-[#C4A24B]/20 outline-none transition-all appearance-auto bg-white"
                   >
                     <option value="" className="text-gray-400">Select budget range</option>
                     <option value="5k-10k">$5,000 - $10,000</option>
@@ -214,14 +205,30 @@ export const Contact: React.FC<ContactProps> = ({ onBack }) => {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Share your goals, challenges, or anything you'd like us to know..."
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#2D5F52] focus:ring-2 focus:ring-[#2D5F52]/20 outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 font-['Manrope'] text-[15px] focus:border-[#C4A24B] focus:ring-2 focus:ring-[#C4A24B]/20 outline-none transition-all resize-none"
           />
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full md:w-auto px-10 py-4 bg-[#2D5F52] text-white font-['Manrope'] font-semibold text-sm rounded-lg hover:bg-[#245046] hover:shadow-lg hover:shadow-[#2D5F52]/30 transition-all duration-300 hover:-translate-y-0.5"
+                className="w-full md:w-auto transition-all duration-300 hover:opacity-90 hover:scale-105"
+                style={{
+                  width: '252px',
+                  height: '52px',
+                  background: '#C4A24B',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderRadius: 0,
+                  fontFamily: "'Rajdhani', sans-serif",
+                  fontWeight: 500,
+                  fontSize: '24px',
+                  lineHeight: '110%',
+                  letterSpacing: '0.04em',
+                  color: '#000000',
+                  textTransform: 'uppercase',
+                }}
               >
                 Apply Now
               </button>

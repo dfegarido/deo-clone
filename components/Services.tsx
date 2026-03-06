@@ -121,7 +121,6 @@ export const Services: React.FC = () => {
             <div className="flex flex-col">
               {SERVICES.map((service) => {
                 const isActive = activeService.id === service.id;
-                const isAI = service.id === 5;
                 return (
                   <div
                     key={service.id}
@@ -139,9 +138,7 @@ export const Services: React.FC = () => {
                           <h4
                             className="text-base sm:text-lg md:text-xl lg:text-[1.875rem] font-['Oswald'] uppercase font-bold transition-colors duration-300 leading-[1.2em]"
                             style={{
-                              color: isActive
-                                ? (isAI ? '#ffffff' : '#1B7E65')
-                                : '#1B7E65',
+                              color: '#1B7E65',
                             }}
                           >
                             {service.title}

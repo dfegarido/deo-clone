@@ -165,36 +165,95 @@ const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                             </svg>
                         </div>
-            <span className="text-3xl md:text-5xl font-['Oswald'] font-bold tracking-tight text-white">
+            <span
+              style={{
+                fontFamily: "'Oswald', sans-serif",
+                fontWeight: 700,
+                fontSize: 'clamp(2rem, 4vw, 48px)',
+                lineHeight: '48px',
+                letterSpacing: '-1.2px',
+                color: '#FFFFFF',
+              }}
+            >
               {study.brand}
             </span>
                     </div>
                 </div>
 
-        <h3 className="text-xs font-['Space_Mono'] uppercase tracking-[0.2em] font-bold text-[#C4A24B] mb-6">
+        {/* Subtitle — Space Mono 12px bold letter-spacing 2.4px gold */}
+        <h3
+          className="mb-6"
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontWeight: 700,
+            fontSize: '12px',
+            lineHeight: '16px',
+            letterSpacing: '2.4px',
+            textTransform: 'uppercase',
+            color: '#C4A24B',
+            textAlign: 'center',
+          }}
+        >
           {study.subtitle}
-                </h3>
+        </h3>
 
-                <p className="text-neutral-300 mb-10 leading-relaxed text-sm md:text-base max-w-lg mx-auto">
+        {/* Description — Manrope 400 16px #D4D4D4 */}
+        <p
+          className="mb-10 max-w-lg mx-auto"
+          style={{
+            fontFamily: "'Manrope', sans-serif",
+            fontWeight: 400,
+            fontSize: '16px',
+            lineHeight: '24px',
+            color: '#D4D4D4',
+            textAlign: 'center',
+          }}
+        >
           {study.description}
-                </p>
+        </p>
 
-                {/* Stats Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 w-full mb-10">
+        {/* Stats Grid — spec: 2 rows × 3 cols, badge border-radius 8px, backdrop-blur(6px) */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 w-full mb-10">
           {study.stats.map((item, i) => (
             <div
               key={i}
-              className="bg-white/5 border border-white/10 rounded-lg p-4 backdrop-blur-md hover:bg-white/10 transition-colors text-left"
+              className="p-4 text-left hover:bg-white/10 transition-colors"
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                backdropFilter: 'blur(6px)',
+                borderRadius: '8px',
+              }}
             >
-              <div className="text-2xl md:text-3xl font-bold font-['Oswald'] text-white mb-1">
+              {/* Value — Oswald 700 30px white */}
+              <div
+                className="mb-1"
+                style={{
+                  fontFamily: "'Oswald', sans-serif",
+                  fontWeight: 700,
+                  fontSize: '30px',
+                  lineHeight: '36px',
+                  color: '#FFFFFF',
+                }}
+              >
                 {item.val}
               </div>
-              <div className="text-[9px] text-neutral-400 uppercase leading-tight font-['Space_Mono'] font-bold">
+              {/* Label — Space Mono 700 9px uppercase #A3A3A3 */}
+              <div
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontWeight: 700,
+                  fontSize: '9px',
+                  lineHeight: '11px',
+                  textTransform: 'uppercase',
+                  color: '#A3A3A3',
+                }}
+              >
                 {item.text}
               </div>
-                        </div>
-                    ))}
-                </div>
+            </div>
+          ))}
+        </div>
 
             </motion.div>
     </div>
@@ -207,30 +266,65 @@ export const Work: React.FC = () => {
       id="work"
       className="relative py-32 bg-[#071a13] overflow-hidden border-t border-white/10"
     >
-      {/* Background Ambience */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#2D5F52]/10 rounded-full blur-[120px] pointer-events-none" />
+      {/* Background Ambience — spec: 800x800px, rgba(45,95,82,0.1), blur(60px) */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none" style={{ background: 'rgba(45,95,82,0.1)', filter: 'blur(60px)' }} />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="mb-24 text-center">
-            <motion.span 
+            <motion.span
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                className="text-xs font-bold font-['Space_Mono'] uppercase tracking-[0.2em] text-[#C4A24B] mb-4 block"
+                className="block mb-3"
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontWeight: 700,
+                  fontSize: '12px',
+                  lineHeight: '16px',
+                  letterSpacing: '2.4px',
+                  textTransform: 'uppercase',
+                  color: '#C4A24B',
+                  textAlign: 'center',
+                }}
             >
                 [ Selected Work ]
             </motion.span>
-            <motion.h2 
+            <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="font-['DM_Sans'] text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-bold uppercase leading-[1.2em] text-white"
             >
-            Trusted by 2,000+{' '}
-            <br />
-            <span className="font-editorial lowercase">
-              leading brands
-            </span>
+              {/* "Trusted by 2,000+" — DM Sans 700 56px uppercase white */}
+              <span
+                className="block"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 700,
+                  fontSize: 'clamp(2rem, 4vw, 56px)',
+                  lineHeight: '67px',
+                  textTransform: 'uppercase',
+                  color: '#FFFFFF',
+                  textAlign: 'center',
+                }}
+              >
+                Trusted by 2,000+
+              </span>
+              {/* "leading brands" — Playfair Display italic 56px lowercase white */}
+              <span
+                className="block"
+                style={{
+                  fontFamily: "'Playfair Display', Georgia, serif",
+                  fontStyle: 'italic',
+                  fontWeight: 400,
+                  fontSize: 'clamp(2rem, 4vw, 56px)',
+                  lineHeight: '67px',
+                  textTransform: 'lowercase',
+                  color: '#FFFFFF',
+                  textAlign: 'center',
+                }}
+              >
+                leading brands
+              </span>
             </motion.h2>
         </div>
 

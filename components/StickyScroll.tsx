@@ -197,25 +197,6 @@ export const StickyScroll: React.FC = () => {
                     {item.description}
                   </p>
 
-                  {/* Certified Partners */}
-                  <div className="mb-5">
-                    <p className="text-[10px] font-['Space_Mono'] uppercase tracking-widest text-neutral-400 mb-3">
-                      ── certified partners
-                    </p>
-                    <div className="flex items-center gap-4 flex-wrap">
-                      {item.partners.map((partner, pIdx) => (
-                        <img
-                          key={pIdx}
-                          src={partner.logo}
-                          alt={partner.name}
-                          title={partner.name}
-                          className="w-8 h-8 md:w-9 md:h-9 object-contain opacity-50 hover:opacity-100 transition-opacity duration-200"
-                            loading="lazy"
-                          />
-                      ))}
-                    </div>
-                  </div>
-
                   {/* CTA Button */}
                   <button className="self-start text-xs font-['Space_Mono'] font-bold uppercase tracking-widest text-[#C4A24B] border border-[#C4A24B]/30 rounded-full px-5 py-2.5 hover:bg-[#C4A24B]/10 hover:border-[#C4A24B]/60 transition-all duration-300">
                     {item.cta}

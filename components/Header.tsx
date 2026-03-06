@@ -6,10 +6,11 @@ import { NAV_ITEMS } from '../constants';
 interface HeaderProps {
   onGetInTouch: () => void;
   onLogoClick: () => void;
-  currentPage: 'home' | 'contact';
+  onSolutionsClick: () => void;
+  currentPage: 'home' | 'contact' | 'solutions';
 }
 
-export const Header: React.FC<HeaderProps> = ({ onGetInTouch, onLogoClick, currentPage }) => {
+export const Header: React.FC<HeaderProps> = ({ onGetInTouch, onLogoClick, onSolutionsClick, currentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, label: string) => {
     e.preventDefault();
@@ -21,8 +22,14 @@ export const Header: React.FC<HeaderProps> = ({ onGetInTouch, onLogoClick, curre
       return;
     }
 
-    // If on contact page, go home first then scroll
-    if (currentPage === 'contact') {
+    // If "Solutions" is clicked, navigate to solutions page
+    if (label.toLowerCase() === 'solutions') {
+      onSolutionsClick();
+      return;
+    }
+
+    // If on contact or solutions page, go home first then scroll
+    if (currentPage === 'contact' || currentPage === 'solutions') {
       onLogoClick();
       return;
     }

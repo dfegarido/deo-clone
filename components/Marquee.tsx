@@ -236,13 +236,29 @@ export const Marquee: React.FC = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-xs font-bold font-['Space_Mono'] uppercase tracking-[0.2em] text-[#C4A24B] mb-3"
+          style={{
+            fontFamily: "'Space Mono', monospace",
+            fontWeight: 700,
+            fontSize: '12px',
+            lineHeight: '16px',
+            letterSpacing: '2.4px',
+            textTransform: 'uppercase',
+            color: '#C4A24B',
+            marginBottom: '12px',
+          }}
         >[ Industries We Scale ]</motion.h2>
         <motion.h3
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-['DM_Sans'] text-[2rem] sm:text-[2.5rem] md:text-[3.5rem] font-bold uppercase leading-[1.2em] text-white"
+          style={{
+            fontFamily: "'DM Sans', sans-serif",
+            fontWeight: 700,
+            fontSize: 'clamp(2rem, 4vw, 56px)',
+            lineHeight: '1.2em',
+            textTransform: 'uppercase',
+            color: '#FFFFFF',
+          }}
         >
           Proven Across High-Performance Verticals
         </motion.h3>
@@ -260,18 +276,7 @@ export const Marquee: React.FC = () => {
       */}
       <div
         className="relative w-full overflow-hidden cursor-grab select-none"
-        style={{
-          touchAction: 'pan-y',
-          // 12% parabolic arc: y = 12 × 4x(1-x) %
-          clipPath: `polygon(
-            0% 0%,
-            10% 4.3%, 20% 7.7%, 30% 10%, 40% 11.5%, 50% 12%, 60% 11.5%, 70% 10%, 80% 7.7%, 90% 4.3%,
-            100% 0%,
-            100% 100%,
-            90% 95.7%, 80% 92.3%, 70% 90%, 60% 88.5%, 50% 88%, 40% 88.5%, 30% 90%, 20% 92.3%, 10% 95.7%,
-            0% 100%
-          )`,
-        }}
+        style={{ touchAction: 'pan-y' }}
       >
         <div
           ref={trackRef}
@@ -293,33 +298,72 @@ export const Marquee: React.FC = () => {
                 draggable={false}
               />
 
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20" />
+              {/* Gradient overlay — spec: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 100%) */}
+              <div
+                className="absolute inset-0"
+                style={{ background: 'linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 100%)' }}
+              />
 
-              {/*
-                Content CENTERED vertically — stays inside the safe zone
-                (between the two arc clip boundaries at ~145px from each end)
-              */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 sm:gap-2 md:gap-3 px-2 sm:px-3 md:px-4 z-10">
-                {/* Company name */}
-                <h3 className="text-[10px] sm:text-sm md:text-base lg:text-xl xl:text-2xl font-['DM_Sans'] font-bold text-white uppercase tracking-tight drop-shadow-lg text-center mb-0.5">
+              {/* Content — centered vertically per spec (title + stats block centered at card midpoint) */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center px-4 z-10 gap-3">
+                {/* Company name — DM Sans 700 24px uppercase, drop-shadow */}
+                <h3
+                  className="text-white text-center uppercase drop-shadow-lg"
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontWeight: 700,
+                    fontSize: 'clamp(14px, 1.5vw, 24px)',
+                    lineHeight: '32px',
+                    letterSpacing: '-0.6px',
+                  }}
+                >
                   {item.company}
                 </h3>
 
-                {/* Stats */}
-                <div className="flex flex-col gap-1 sm:gap-1.5 md:gap-2 w-full">
+                {/* Stats badges */}
+                <div className="flex flex-col gap-2 w-full">
                   {item.stats.map((s, idx) => (
                     <div
                       key={idx}
-                      className="bg-white/[0.12] backdrop-blur-md border border-white/20 rounded-lg sm:rounded-xl px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 md:py-2.5 flex items-center gap-1 sm:gap-1.5 md:gap-2"
+                      className="flex items-center gap-2 px-3 py-2.5"
+                      style={{
+                        background: 'rgba(255,255,255,0.12)',
+                        border: '1px solid rgba(255,255,255,0.2)',
+                        backdropFilter: 'blur(6px)',
+                        borderRadius: '12px',
+                        height: '50px',
+                      }}
                     >
-                      <span className="text-[10px] sm:text-sm md:text-base lg:text-lg xl:text-xl font-['DM_Sans'] font-bold text-white leading-none tracking-tight shrink-0">
+                      <span
+                        className="text-white leading-none shrink-0"
+                        style={{
+                          fontFamily: "'DM Sans', sans-serif",
+                          fontWeight: 700,
+                          fontSize: 'clamp(12px, 1.2vw, 20px)',
+                          letterSpacing: '-0.5px',
+                        }}
+                      >
                         {s.value}
                       </span>
-                      <span className={`text-[10px] sm:text-xs md:text-sm font-bold leading-none shrink-0 ${s.direction === 'up' ? 'text-emerald-400' : 'text-rose-400'}`}>
+                      <span
+                        className={`font-bold leading-none shrink-0 ${s.direction === 'up' ? 'text-[#34D399]' : 'text-[#FB7185]'}`}
+                        style={{
+                          fontFamily: "'Manrope', sans-serif",
+                          fontWeight: 700,
+                          fontSize: '14px',
+                        }}
+                      >
                         {s.direction === 'up' ? '↑' : '↓'}
                       </span>
-                      <span className="text-[7px] sm:text-[8px] md:text-[9px] font-['Space_Mono'] font-bold uppercase tracking-wide text-white/80 leading-tight">
+                      <span
+                        className="text-white/80 leading-tight uppercase"
+                        style={{
+                          fontFamily: "'Space Mono', monospace",
+                          fontWeight: 700,
+                          fontSize: 'clamp(7px, 0.6vw, 9px)',
+                          letterSpacing: '0.225px',
+                        }}
+                      >
                         {s.label}
                       </span>
                     </div>
@@ -330,9 +374,15 @@ export const Marquee: React.FC = () => {
           ))}
         </div>
 
-        {/* Edge fade vignettes */}
-        <div className="absolute top-0 left-0 w-[8%] h-full bg-gradient-to-r from-[#04120e] to-transparent pointer-events-none z-10" />
-        <div className="absolute top-0 right-0 w-[8%] h-full bg-gradient-to-l from-[#04120e] to-transparent pointer-events-none z-10" />
+        {/* Edge fade vignettes — spec: left: 0% right: 92% and left: 92% right: 0% */}
+        <div
+          className="absolute top-0 left-0 w-[8%] h-full pointer-events-none z-10"
+          style={{ background: 'linear-gradient(90deg, #04120E 0%, rgba(4,18,14,0) 100%)' }}
+        />
+        <div
+          className="absolute top-0 right-0 w-[8%] h-full pointer-events-none z-10"
+          style={{ background: 'linear-gradient(270deg, #04120E 0%, rgba(4,18,14,0) 100%)' }}
+        />
       </div>
 
       {/* Bottom caption */}
@@ -342,7 +392,14 @@ export const Marquee: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-neutral-400 font-['Manrope'] text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
+          style={{
+            fontFamily: "'Manrope', sans-serif",
+            fontWeight: 400,
+            fontSize: '18px',
+            lineHeight: '28px',
+            color: '#A3A3A3',
+          }}
+          className="max-w-2xl mx-auto text-center"
         >
           Our vertical depth allows us to match offers with proven audience demand.
         </motion.p>
