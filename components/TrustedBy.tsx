@@ -34,27 +34,27 @@ const BASE = import.meta.env.BASE_URL;
 const PARTNERS: Partner[] = [
   // Row 1
   { name: 'Vivint', image: `${BASE}assets/vivint-logo.png` },
-  { name: 'ADT', image: adtLogo, bgType: 'colored', scale: 0.8 },
+  { name: 'ADT', image: adtLogo, bgType: 'colored' },
   { name: 'CarShield', image: carShieldLogo, bgType: 'light' },
   { name: 'HelloFresh', image: helloFreshLogo },
-  { name: 'Liberty Mutual', image: libertyMutualLogo, scale: 0.9 },
-  { name: 'Life Line', image: lifeLineLogo, scale: 1.3 },
+  { name: 'Liberty Mutual', image: libertyMutualLogo },
+  { name: 'Life Line', image: lifeLineLogo },
   // Row 2
-  { name: 'Saatva', image: saatvaLogo, bgType: 'light', scale: 1.1 },
+  { name: 'Saatva', image: saatvaLogo, bgType: 'light' },
   { name: 'Renewal by Andersen', image: rbaLogo },
-  { name: 'Noom', image: noomLogo, scale: 0.75 },
-  { name: 'Quicken Loans', image: quickenLoansLogo, scale: 0.8 },
+  { name: 'Noom', image: noomLogo },
+  { name: 'Quicken Loans', image: quickenLoansLogo },
   { name: "Sam's Club", image: samsClubLogo },
   { name: 'TruGreen', image: truGreenLogo },
   // Row 3
-  { name: 'Uber', image: uberLogo, scale: 1.15 },
-  { name: 'Warby Parker', image: warbyParkerLogo, scale: 1.15 },
-  { name: 'Grounded Footwear', image: groundedFootwearLogo, bgType: 'light', scale: 1.25 },
-  { name: "The Farmer's Dog", image: `${BASE}assets/farmers-dog-logo.webp`, bgType: 'colored', scale: 0.75 },
+  { name: 'Uber', image: uberLogo },
+  { name: 'Warby Parker', image: warbyParkerLogo },
+  { name: 'Grounded Footwear', image: groundedFootwearLogo, bgType: 'light' },
+  { name: "The Farmer's Dog", image: `${BASE}assets/farmers-dog-logo.webp`, bgType: 'colored' },
   { name: 'Warby Parker Alt', image: `${BASE}assets/warby-parker-alt-logo.jpg`, bgType: 'light' },
 ];
 
-const IMG_BASE = 'max-w-[80%] max-h-14 sm:max-h-16 md:max-h-16 w-auto object-contain opacity-50 group-hover:opacity-100 transition-all duration-300';
+const IMG_BASE = 'max-w-[85%] h-16 sm:h-20 md:h-24 w-auto object-contain object-center opacity-50 group-hover:opacity-100 transition-all duration-300';
 
 const getImageClasses = (_bgType?: BgType) => {
   // All logos: grayscale at rest → original color on hover
@@ -67,7 +67,7 @@ const PartnerCard: React.FC<{ partner: Partner; index: number }> = ({ partner, i
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.4, delay: (index % 6) * 0.08 }}
-    className="group relative rounded-xl aspect-[3/2] flex items-center justify-center hover:bg-black hover:border-[#C4A24B]/70 hover:scale-105 hover:shadow-[0_0_10px_rgba(196,162,75,0.5),0_0_30px_rgba(196,162,75,0.3),0_0_60px_rgba(196,162,75,0.2),0_0_100px_rgba(196,162,75,0.1),inset_0_0_15px_rgba(196,162,75,0.08)] transition-all duration-300 cursor-pointer p-4"
+    className="group relative rounded-xl aspect-[3/2] flex items-center justify-center hover:bg-black hover:border-[#C4A24B]/70 hover:scale-105 hover:shadow-[0_0_10px_rgba(196,162,75,0.5),0_0_30px_rgba(196,162,75,0.3),0_0_60px_rgba(196,162,75,0.2),0_0_100px_rgba(196,162,75,0.1),inset_0_0_15px_rgba(196,162,75,0.08)] transition-all duration-300 cursor-pointer p-5 md:p-6"
     style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
   >
     <img

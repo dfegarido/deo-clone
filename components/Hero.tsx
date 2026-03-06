@@ -34,7 +34,7 @@ export const Hero: React.FC<HeroProps> = ({ onGetInTouch }) => {
         />
       </motion.div>
 
-      <div className="relative z-10 container mx-auto px-6 md:px-12 flex flex-col items-center text-center">
+      <div className="relative z-10 container mx-auto px-6 md:px-12 flex flex-col items-center text-center pt-24 sm:pt-28 md:pt-32 lg:pt-36">
         <motion.div
           style={{ opacity }}
           initial={{ opacity: 0, y: 100 }}
@@ -96,7 +96,7 @@ export const Hero: React.FC<HeroProps> = ({ onGetInTouch }) => {
           </p>
 
           {/* CTA Button */}
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-20 sm:mb-24 md:mb-28">
             <button
               onClick={onGetInTouch}
               className="transition-all duration-300 hover:opacity-90 hover:scale-105"
@@ -131,7 +131,7 @@ export const Hero: React.FC<HeroProps> = ({ onGetInTouch }) => {
       {/* Scroll indicator */}
       <motion.div
         style={{ opacity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-3 z-10"
+        className="absolute bottom-6 sm:bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-3 z-10"
       >
         <span
           style={{

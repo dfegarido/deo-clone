@@ -140,7 +140,7 @@ export const StickyScroll: React.FC = () => {
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col md:flex-row">
         
         {/* Left Side: Text Content */}
-        <div className="w-full md:w-1/2 h-full flex items-center justify-center px-6 md:px-20 z-10 bg-[#020a07]/90 md:bg-[#020a07]">
+        <div className="w-full md:w-1/2 h-full flex items-center justify-center px-6 md:px-12 z-10 bg-[#020a07]/90 md:bg-[#020a07]">
           <div className="relative w-full max-w-lg h-[420px] md:h-[480px]">
             {CONTENT.map((item, index) => {
               const segmentLength = 1 / CONTENT.length;

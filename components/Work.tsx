@@ -111,7 +111,7 @@ const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
   return (
     <div
       ref={blockRef}
-      className="relative w-full max-w-[1920px] mx-auto min-h-[800px] flex justify-center items-center perspective-[1000px]"
+      className="relative w-full max-w-7xl mx-auto min-h-[800px] flex justify-center items-center perspective-[1000px]"
     >
       {/* Left Image */}
             <motion.div 
@@ -269,7 +269,7 @@ export const Work: React.FC = () => {
       {/* Background Ambience — spec: 800x800px, rgba(45,95,82,0.1), blur(60px) */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none" style={{ background: 'rgba(45,95,82,0.1)', filter: 'blur(60px)' }} />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="mb-24 text-center">
             <motion.span
