@@ -9,9 +9,9 @@ interface ButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', className = '', onClick }) => {
-  const baseStyles = "px-8 py-4 uppercase tracking-wider font-bold text-sm transition-all duration-300 overflow-hidden relative group";
+  const baseStyles = "inline-flex items-center justify-center w-full max-w-[252px] sm:w-[252px] h-[48px] sm:h-[52px] px-3 sm:px-2 uppercase tracking-wider font-bold text-xs sm:text-sm transition-all duration-300 overflow-hidden relative group";
   const variants = {
-    primary: "bg-white text-black hover:bg-neutral-200",
+    primary: "bg-[#C4A24B] text-black hover:bg-[#b8923d]",
     outline: "border border-white text-white hover:bg-white hover:text-black",
   };
 

@@ -16,7 +16,7 @@ export const Hero: React.FC<HeroProps> = ({ onGetInTouch }) => {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-[#041210]">
+    <section className="relative min-h-[100svh] w-full overflow-hidden flex items-center justify-center bg-[#041210]">
       {/* Background */}
       <motion.div 
         style={{ y, scale }}
@@ -38,30 +38,37 @@ export const Hero: React.FC<HeroProps> = ({ onGetInTouch }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="mb-6"
-          >
-            <img src={`${import.meta.env.BASE_URL}assets/evolutra-logo.png`} alt="Evolutra" className="h-10 md:h-14 w-auto object-contain mx-auto" />
-          </motion.div>
-
-          <div className="mb-4 overflow-hidden">
+          <div className="mb-4 overflow-hidden px-2">
              <motion.span 
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="inline-block px-3 py-1 border border-white/30 rounded-full text-xs font-['Space_Mono'] font-bold uppercase tracking-wider text-white/80 backdrop-blur-md"
+                className="inline-block px-2.5 sm:px-3 py-1 border border-[#E3B645]/40 rounded-full backdrop-blur-md"
+                style={{
+                  fontFamily: "'Rajdhani', sans-serif",
+                  fontWeight: 600,
+                  fontSize: 'clamp(0.85rem, 2.8vw, 1.5rem)',
+                  lineHeight: '110%',
+                  letterSpacing: '0.04em',
+                  color: '#E3B645',
+                  textAlign: 'center',
+                }}
              >
-                Performance Growth Partner
+                ( Performance Growth Partner )
              </motion.span>
           </div>
-          <h1 className="font-['DM_Sans'] text-[2.8rem] sm:text-[4rem] md:text-[5.5rem] lg:text-[7rem] font-medium leading-[0.9em] tracking-[-2px] md:tracking-[-4px] uppercase mb-8 text-transparent bg-clip-text bg-gradient-to-b from-[#e8d5a3] via-white to-[#a8e6cf]">
+          <h1
+            className="font-['DM_Sans'] text-[2.8rem] sm:text-[4rem] md:text-[5.5rem] lg:text-[6.875rem] font-bold leading-[0.91em] tracking-[-2px] md:tracking-[-4px] uppercase mb-8"
+            style={{
+              backgroundImage: 'linear-gradient(90deg, rgba(45, 175, 169, 0.6) 5.91%, rgba(250, 253, 215, 0.6) 94.15%), linear-gradient(#ffffff, #ffffff)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >
             Own the Inbox.<br />Scale With Precision.
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/80 font-['Manrope'] font-light tracking-wide leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 text-white/80 font-['Manrope'] font-light tracking-wide leading-relaxed">
             We are a performance-driven email and data infrastructure partner built for brands that demand measurable growth.
           </p>
           <div className="flex justify-center">
@@ -72,7 +79,7 @@ export const Hero: React.FC<HeroProps> = ({ onGetInTouch }) => {
 
       <motion.div 
         style={{ opacity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 z-10"
       >
         <span className="text-[10px] font-['Space_Mono'] uppercase tracking-[0.2em] text-gray-500">Scroll</span>
         <div className="w-[1px] h-12 bg-gradient-to-b from-gray-500 to-transparent" />

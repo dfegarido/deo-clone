@@ -146,17 +146,27 @@ export const StickyScroll: React.FC = () => {
               const segmentLength = 1 / CONTENT.length;
               const start = index * segmentLength;
               const end = start + segmentLength;
-              
+
+              // First item starts fully visible; others fade in
+              const isFirst = index === 0;
               const opacity = useTransform(
                 scrollYProgress,
-                [start, start + 0.08, end - 0.08, end],
-                [0, 1, 1, 0]
+                isFirst
+                  ? [0, end - 0.08, end]
+                  : [start, start + 0.08, end - 0.08, end],
+                isFirst
+                  ? [1, 1, 0]
+                  : [0, 1, 1, 0]
               );
 
               const y = useTransform(
                 scrollYProgress,
-                [start, start + 0.08, end - 0.08, end],
-                [50, 0, 0, -50]
+                isFirst
+                  ? [0, end - 0.08, end]
+                  : [start, start + 0.08, end - 0.08, end],
+                isFirst
+                  ? [0, 0, -50]
+                  : [50, 0, 0, -50]
               );
 
               return (
@@ -223,15 +233,23 @@ export const StickyScroll: React.FC = () => {
              const start = index * segmentLength;
              const end = start + segmentLength;
 
+             const isFirst = index === 0;
              const isLast = index === CONTENT.length - 1;
-             const opacityRange = isLast 
-                ? [start, start + 0.05, 1, 1] 
-                : [start, start + 0.05, end - 0.05, end];
-             
+
+             const opacityRange = isFirst
+               ? [0, end - 0.05, end]
+               : isLast
+               ? [start, start + 0.05, 1, 1]
+               : [start, start + 0.05, end - 0.05, end];
+
+             const opacityValues = isFirst
+               ? [1, 1, 0]
+               : [0, 1, 1, 0];
+
              const opacity = useTransform(
                scrollYProgress,
                opacityRange,
-               [0, 1, 1, 0]
+               opacityValues
              );
              
              const scale = useTransform(scrollYProgress, [start, end], [1.1, 1]);

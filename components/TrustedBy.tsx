@@ -38,16 +38,16 @@ const PARTNERS: Partner[] = [
   { name: 'Warby Parker', image: `${BASE}assets/warby-parker-alt-logo.jpg`, bgType: 'light' },
 ];
 
-const IMG_BASE = 'max-w-[80%] max-h-14 sm:max-h-16 md:max-h-16 w-auto object-contain opacity-50 group-hover:opacity-100 transition-all duration-300';
+const IMG_BASE = 'max-w-[80%] max-h-14 sm:max-h-16 md:max-h-16 w-auto object-contain opacity-60 group-hover:opacity-100 transition-all duration-300';
 
 const getImageClasses = (bgType?: BgType) => {
   switch (bgType) {
     case 'light':
-      return `${IMG_BASE} invert grayscale mix-blend-screen`;
+      return `${IMG_BASE} grayscale group-hover:grayscale-0 group-hover:brightness-110`;
     case 'colored':
-      return `${IMG_BASE} grayscale`;
+      return `${IMG_BASE} grayscale group-hover:grayscale-0 group-hover:brightness-110`;
     default:
-      return `${IMG_BASE} brightness-0 invert`;
+      return `${IMG_BASE} brightness-0 group-hover:invert`;
   }
 };
 
@@ -57,7 +57,7 @@ const PartnerCard: React.FC<{ partner: Partner; index: number }> = ({ partner, i
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.4, delay: (index % 6) * 0.08 }}
-    className="group relative bg-white/[0.03] border border-white/[0.06] rounded-xl aspect-[3/2] flex items-center justify-center hover:bg-black hover:border-[#C4A24B]/70 hover:scale-105 hover:shadow-[0_0_10px_rgba(196,162,75,0.5),0_0_30px_rgba(196,162,75,0.3),0_0_60px_rgba(196,162,75,0.2),0_0_100px_rgba(196,162,75,0.1),inset_0_0_15px_rgba(196,162,75,0.08)] transition-all duration-300 cursor-pointer p-4"
+    className="group relative bg-black/[0.05] border border-black/[0.1] rounded-xl aspect-[3/2] flex items-center justify-center hover:bg-black hover:border-[#C4A24B]/70 hover:scale-105 hover:shadow-[0_0_10px_rgba(196,162,75,0.5),0_0_30px_rgba(196,162,75,0.3),0_0_60px_rgba(196,162,75,0.2),0_0_100px_rgba(196,162,75,0.1),inset_0_0_15px_rgba(196,162,75,0.08)] transition-all duration-300 cursor-pointer p-4"
   >
     <img
       src={partner.image}
@@ -75,7 +75,7 @@ interface TrustedByProps {
 
 export const TrustedBy: React.FC<TrustedByProps> = ({ onGetInTouch }) => {
   return (
-    <section className="bg-black py-20 lg:py-28">
+    <section className="bg-[#CEE8DE] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Tag */}
         <motion.p
@@ -83,9 +83,17 @@ export const TrustedBy: React.FC<TrustedByProps> = ({ onGetInTouch }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-xs font-['Space_Mono'] font-bold tracking-[0.2em] text-[#C4A24B] uppercase mb-6 text-center"
+          className="mb-5 sm:mb-6 text-center"
+          style={{
+            fontFamily: "'Rajdhani', sans-serif",
+            fontWeight: 600,
+            fontSize: 'clamp(1rem, 3.5vw, 1.5rem)',
+            lineHeight: '110%',
+            letterSpacing: '0.04em',
+            color: '#E3B645',
+          }}
         >
-          [ Partners ]
+          ( PARTNERS )
         </motion.p>
 
         {/* Heading */}
@@ -94,7 +102,7 @@ export const TrustedBy: React.FC<TrustedByProps> = ({ onGetInTouch }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-['DM_Sans'] text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-bold uppercase leading-[1.2em] text-white mb-10 md:mb-16 text-center"
+          className="font-['DM_Sans'] text-[1.8rem] sm:text-[2.2rem] md:text-[2.8rem] lg:text-[3.5rem] font-bold uppercase leading-[1.2em] text-[#041210] mb-10 md:mb-16 text-center"
         >
           Some of the partners<br />we've grown.
         </motion.h2>
