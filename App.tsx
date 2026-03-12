@@ -23,17 +23,17 @@ function App() {
 
   const navigateToContact = () => {
     setCurrentPage('contact');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
   const navigateToHome = () => {
     setCurrentPage('home');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
   const navigateToSolutions = () => {
     setCurrentPage('solutions');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
   // Handle browser back/forward

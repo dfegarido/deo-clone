@@ -112,20 +112,20 @@ const CONTENT = [
     ],
     cta: "Let's Talk Lifecycle Marketing"
   },
-  {
-    icon: ICONS.webDesign,
-    label: "Web Design & Development",
-    title: "Web Design & Development",
-    description: "We craft intuitive, robust web solutions that transform your vision into captivating digital experiences.",
-    img: SECTION_IMAGES.webDesign,
-    partners: [
-      { name: "WordPress VIP", logo: LOGOS.wordpress },
-      { name: "Shopify Plus", logo: LOGOS.shopify },
-      { name: "BigCommerce", logo: LOGOS.bigcommerce },
-      { name: "Webflow", logo: LOGOS.webflow },
-    ],
-    cta: "Let's Talk Web"
-  },
+  // {
+  //   icon: ICONS.webDesign,
+  //   label: "Web Design & Development",
+  //   title: "Web Design & Development",
+  //   description: "We craft intuitive, robust web solutions that transform your vision into captivating digital experiences.",
+  //   img: SECTION_IMAGES.webDesign,
+  //   partners: [
+  //     { name: "WordPress VIP", logo: LOGOS.wordpress },
+  //     { name: "Shopify Plus", logo: LOGOS.shopify },
+  //     { name: "BigCommerce", logo: LOGOS.bigcommerce },
+  //     { name: "Webflow", logo: LOGOS.webflow },
+  //   ],
+  //   cta: "Let's Talk Web"
+  // },
 ];
 
 export const StickyScroll: React.FC = () => {

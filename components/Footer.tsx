@@ -143,7 +143,7 @@ export const Footer: React.FC<FooterProps> = ({ onBecomePartner }) => {
             >
               hello@evolutra.com
             </a>
-            <a
+            {/* <a
               href="tel:+15550000000"
               className="hover:text-white transition-colors"
               style={{
@@ -157,7 +157,7 @@ export const Footer: React.FC<FooterProps> = ({ onBecomePartner }) => {
               }}
             >
               +1 (555) 000-0000
-            </a>
+            </a> */}
           </div>
 
           {/* Social */}

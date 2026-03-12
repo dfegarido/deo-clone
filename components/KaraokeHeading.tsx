@@ -54,17 +54,10 @@ export const KaraokeHeading: React.FC = () => {
           ( WE ARE EVOLUTRA )
         </motion.span>
 
-        {/* Main heading — DM Sans 700, 70px/80px line-height, horizontal gradient, karaoke opacity reveal */}
+        {/* Karaoke: unrevealed = black; revealed = left-to-right gradient (teal → white) */}
         <h2
           className="font-['DM_Sans'] text-[1.875rem] sm:text-[2.5rem] md:text-[3.4rem] lg:text-[4.375rem] font-bold uppercase text-center"
-          style={{
-            lineHeight: '1.143em',
-            backgroundImage:
-              'linear-gradient(90deg, rgba(45, 175, 169, 0.6) 5.91%, rgba(250, 253, 215, 0.6) 94.15%), linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5))',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-          }}
+          style={{ lineHeight: '1.143em' }}
         >
           {WORDS.map((word, wIdx) => (
             <span key={wIdx} className="inline-block mr-[0.3em]">
@@ -77,6 +70,7 @@ export const KaraokeHeading: React.FC = () => {
 
                 const start = globalIdx / totalChars;
                 const end = (globalIdx + 1) / totalChars;
+                const charPosition = (start + end) / 2; // 0 = left (teal), 1 = right (white)
 
                 return (
                   <KaraokeChar
@@ -85,6 +79,7 @@ export const KaraokeHeading: React.FC = () => {
                     scrollYProgress={scrollYProgress}
                     start={start}
                     end={end}
+                    charPosition={charPosition}
                   />
                 );
               })}
@@ -96,17 +91,31 @@ export const KaraokeHeading: React.FC = () => {
   );
 };
 
-// Individual animated character — opacity-based so parent gradient shows through
+// Gradient: teal (left) → white (right)
+const TEAL = { r: 45, g: 175, b: 169 };
+const WHITE = { r: 250, g: 253, b: 215 };
+
+const getGradientColor = (t: number) =>
+  `rgb(${Math.round(TEAL.r + (WHITE.r - TEAL.r) * t)}, ${Math.round(TEAL.g + (WHITE.g - TEAL.g) * t)}, ${Math.round(TEAL.b + (WHITE.b - TEAL.b) * t)})`;
+
+// Reveal sweep: left-to-right. Character is revealed when scroll passes its horizontal position (charPosition).
+const REVEAL_SMOOTH = 0.04; // Small scroll window for smooth transition
+
 const KaraokeChar: React.FC<{
   char: string;
   scrollYProgress: any;
   start: number;
   end: number;
-}> = ({ char, scrollYProgress, start, end }) => {
-  const opacity = useTransform(scrollYProgress, [start, end], [0.15, 1]);
+  charPosition: number;
+}> = ({ char, scrollYProgress, charPosition }) => {
+  const color = useTransform(
+    scrollYProgress,
+    [charPosition - REVEAL_SMOOTH, charPosition + REVEAL_SMOOTH],
+    ['rgb(0,0,0)', getGradientColor(charPosition)]
+  );
 
   return (
-    <motion.span style={{ opacity }} className="inline-block transition-none">
+    <motion.span style={{ color }} className="inline-block transition-none">
       {char}
     </motion.span>
   );

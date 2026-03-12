@@ -16,6 +16,7 @@ import truGreenLogo from '../assets/TruGreen_Primary_Logo_(R)_FullColor_RGB_(2).
 import uberLogo from '../assets/Uber_logo_2018.png';
 import warbyParkerLogo from '../assets/Warby_Parker_logo.svg.png';
 import groundedFootwearLogo from '../assets/Grounded Footwear - Step Into Comfort_ Grounded Footwear.png';
+import frenchbeeLogo from '../assets/frenchbee-logo.svg';
 
 // bgType: 'transparent' = dark logo on transparent bg (use brightness-0 invert)
 //         'light' = dark logo on white/light bg (use invert + grayscale + mix-blend-screen)
@@ -48,6 +49,7 @@ const PARTNERS: Partner[] = [
   { name: 'TruGreen', image: truGreenLogo },
   // Row 3
   { name: 'Uber', image: uberLogo },
+  { name: 'French Bee', image: frenchbeeLogo },
   { name: 'Warby Parker', image: warbyParkerLogo },
   { name: 'Grounded Footwear', image: groundedFootwearLogo, bgType: 'light' },
   { name: "The Farmer's Dog", image: `${BASE}assets/farmers-dog-logo.webp`, bgType: 'colored' },
@@ -86,7 +88,7 @@ interface TrustedByProps {
 
 export const TrustedBy: React.FC<TrustedByProps> = ({ onGetInTouch }) => {
   return (
-    <section className="bg-[#CEE8DE] py-20 lg:py-28">
+    <section id="industries" className="bg-[#CEE8DE] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Tag */}
         <motion.p
@@ -123,30 +125,6 @@ export const TrustedBy: React.FC<TrustedByProps> = ({ onGetInTouch }) => {
           {PARTNERS.map((partner, index) => (
             <PartnerCard key={index} partner={partner} index={index} />
           ))}
-
-          {/* "Your Logo Here" CTA Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.5 }}
-            onClick={onGetInTouch}
-            className="group bg-[#6366f1] border border-[#6366f1] rounded-xl aspect-[3/2] p-4 flex flex-col items-center justify-center hover:bg-[#4f46e5] transition-all duration-300 cursor-pointer"
-          >
-            <svg
-              className="w-7 h-7 text-white/80 group-hover:text-white transition-colors duration-300 mb-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
-            </svg>
-            <span className="text-xs font-['Space_Mono'] font-bold uppercase tracking-wider text-white/90 group-hover:text-white transition-colors duration-300 text-center leading-tight">
-              your logo<br />here
-            </span>
-          </motion.div>
         </div>
       </div>
     </section>
