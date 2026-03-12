@@ -1,9 +1,9 @@
 import { NavItem, Project, Service } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Solutions', href: '#solutions' },
+  { label: 'Partners', href: '#solutions' },
   { label: 'Industries', href: '#industries' },
-  { label: 'About', href: '#about' },
+  { label: 'Join Us', href: '#join-us' },
   { label: 'Get in Touch', href: '#contact' },
 ];
 

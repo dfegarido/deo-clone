@@ -54,23 +54,23 @@ const SECTION_IMAGES = {
 };
 
 const CONTENT = [
-  {
-    icon: ICONS.paidSocial,
-    label: "Paid Social",
-    title: "Paid Social",
-    description: "Boost acquisition and retention with Evolutra's Paid Social strategies, driving engagement and results.",
-    img: SECTION_IMAGES.paidSocial,
-    partners: [
-      { name: "Meta", logo: LOGOS.meta },
-      { name: "TikTok", logo: LOGOS.tiktok },
-      { name: "Snapchat", logo: LOGOS.snapchat },
-      { name: "Pinterest", logo: LOGOS.pinterest },
-      { name: "LinkedIn", logo: LOGOS.linkedin },
-      { name: "X", logo: LOGOS.x },
-      { name: "Reddit", logo: LOGOS.reddit },
-    ],
-    cta: "Let's Talk Social"
-  },
+  // {
+  //   icon: ICONS.paidSocial,
+  //   label: "Paid Social",
+  //   title: "Paid Social",
+  //   description: "Boost acquisition and retention with Evolutra's Paid Social strategies, driving engagement and results.",
+  //   img: SECTION_IMAGES.paidSocial,
+  //   partners: [
+  //     { name: "Meta", logo: LOGOS.meta },
+  //     { name: "TikTok", logo: LOGOS.tiktok },
+  //     { name: "Snapchat", logo: LOGOS.snapchat },
+  //     { name: "Pinterest", logo: LOGOS.pinterest },
+  //     { name: "LinkedIn", logo: LOGOS.linkedin },
+  //     { name: "X", logo: LOGOS.x },
+  //     { name: "Reddit", logo: LOGOS.reddit },
+  //   ],
+  //   cta: "Let's Talk Social"
+  // },
   {
     icon: ICONS.paidSearch,
     label: "Paid Search",

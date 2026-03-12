@@ -11,6 +11,7 @@ import { Footer } from './components/Footer';
 import { Contact } from './components/Contact';
 import { KaraokeHeading } from './components/KaraokeHeading';
 import { Solutions } from './components/Solutions';
+import { JoinUs } from './components/JoinUs';
 
 // Smooth scroll implementation helper
 // Note: In a real production app, we would use a library like 'lenis' here
@@ -19,7 +20,7 @@ import { Solutions } from './components/Solutions';
 // and Framer Motion for the parallax effects.
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'contact' | 'solutions'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'contact' | 'solutions' | 'join-us'>('home');
 
   const navigateToContact = () => {
     setCurrentPage('contact');
@@ -36,6 +37,11 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
+  const navigateToJoinUs = () => {
+    setCurrentPage('join-us');
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  };
+
   // Handle browser back/forward
   useEffect(() => {
     const handlePopState = () => {
@@ -44,6 +50,8 @@ function App() {
         setCurrentPage('contact');
       } else if (hash === '#solutions-page') {
         setCurrentPage('solutions');
+      } else if (hash === '#join-us-page') {
+        setCurrentPage('join-us');
       } else {
         setCurrentPage('home');
       }
@@ -57,8 +65,10 @@ function App() {
       window.history.pushState(null, '', '#contact-page');
     } else if (currentPage === 'solutions') {
       window.history.pushState(null, '', '#solutions-page');
+    } else if (currentPage === 'join-us') {
+      window.history.pushState(null, '', '#join-us-page');
     } else {
-      if (window.location.hash === '#contact-page' || window.location.hash === '#solutions-page') {
+      if (window.location.hash === '#contact-page' || window.location.hash === '#solutions-page' || window.location.hash === '#join-us-page') {
         window.history.pushState(null, '', '#');
       }
     }
@@ -66,7 +76,7 @@ function App() {
 
   return (
     <div className="bg-[#041210] min-h-screen text-white selection:bg-[#C4A24B] selection:text-black">
-      <Header onGetInTouch={navigateToContact} onLogoClick={navigateToHome} onSolutionsClick={navigateToSolutions} currentPage={currentPage} />
+      <Header onGetInTouch={navigateToContact} onLogoClick={navigateToHome} onSolutionsClick={navigateToSolutions} onJoinUsClick={navigateToJoinUs} currentPage={currentPage} />
       
       {currentPage === 'home' ? (
         <>
@@ -86,6 +96,13 @@ function App() {
         <>
           <main>
             <Solutions />
+          </main>
+          <Footer onBecomePartner={navigateToContact} />
+        </>
+      ) : currentPage === 'join-us' ? (
+        <>
+          <main>
+            <JoinUs onBack={navigateToHome} />
           </main>
           <Footer onBecomePartner={navigateToContact} />
         </>

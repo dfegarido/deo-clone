@@ -7,10 +7,11 @@ interface HeaderProps {
   onGetInTouch: () => void;
   onLogoClick: () => void;
   onSolutionsClick: () => void;
-  currentPage: 'home' | 'contact' | 'solutions';
+  onJoinUsClick: () => void;
+  currentPage: 'home' | 'contact' | 'solutions' | 'join-us';
 }
 
-export const Header: React.FC<HeaderProps> = ({ onGetInTouch, onLogoClick, onSolutionsClick, currentPage }) => {
+export const Header: React.FC<HeaderProps> = ({ onGetInTouch, onLogoClick, onSolutionsClick, onJoinUsClick, currentPage }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, label: string) => {
     e.preventDefault();
@@ -28,8 +29,14 @@ export const Header: React.FC<HeaderProps> = ({ onGetInTouch, onLogoClick, onSol
       return;
     }
 
-    // If on contact or solutions page, go home first then scroll
-    if (currentPage === 'contact' || currentPage === 'solutions') {
+    // If "Join Us" is clicked, navigate to join us page
+    if (label.toLowerCase() === 'join us') {
+      onJoinUsClick();
+      return;
+    }
+
+    // If on contact, solutions, or join-us page, go home first then scroll
+    if (currentPage === 'contact' || currentPage === 'solutions' || currentPage === 'join-us') {
       onLogoClick();
       return;
     }
