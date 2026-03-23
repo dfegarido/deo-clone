@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
+import evolutraLogo from '../assets/Evolutra_logo_in_gradient_colors-removebg-preview.png';
 
 interface HeaderProps {
   onGetInTouch: () => void;
@@ -62,7 +63,7 @@ export const Header: React.FC<HeaderProps> = ({ onGetInTouch, onLogoClick, onSol
         className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-6 md:px-12"
       >
         <a href="#" onClick={handleLogoClick} className="flex items-center">
-          <img src={`${import.meta.env.BASE_URL}assets/evolutra-logo.png`} alt="Evolutra" className="h-8 md:h-10 w-auto object-contain" />
+          <img src={evolutraLogo} alt="Evolutra" className="h-8 md:h-10 w-auto object-contain" />
         </a>
 
         {/* Desktop Nav */}

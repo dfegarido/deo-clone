@@ -47,7 +47,7 @@ export const Services: React.FC = () => {
   const [activeService, setActiveService] = useState(SERVICES[0]);
 
   return (
-    <section id="services" className="py-16 sm:py-20 md:py-24 bg-[#CEE8DE] px-4 sm:px-6 md:px-12 relative overflow-hidden">
+    <section id="services" className="py-16 sm:py-20 md:py-24 bg-[#041814] px-4 sm:px-6 md:px-12 relative overflow-hidden">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-24">
 
@@ -85,11 +85,11 @@ export const Services: React.FC = () => {
                 {/* "PERFORMANCE INFRASTRUCTURE" — DM Sans, 700, 75px, #041814 */}
                 <h3
                   className="font-['DM_Sans'] text-[1.875rem] sm:text-[2.5rem] md:text-[3.4rem] lg:text-[4.6875rem] font-bold uppercase leading-[1em]"
-                  style={{ color: '#041814' }}
+                  style={{ color: '#E8EDEA' }}
                 >
                   Performance<br />Infrastructure
                 </h3>
-                {/* "for Modern Brands." — Playfair Display italic, 65px, #041814 */}
+                {/* "for Modern Brands." — Playfair Display italic */}
                 <span
                   className="block text-[1.75rem] sm:text-[2.2rem] md:text-[3rem] lg:text-[4.0625rem]"
                   style={{
@@ -97,7 +97,7 @@ export const Services: React.FC = () => {
                     fontStyle: 'italic',
                     fontWeight: 400,
                     lineHeight: '1.29em',
-                    color: '#041814',
+                    color: '#E8EDEA',
                   }}
                 >
                   for Modern Brands.
@@ -111,7 +111,7 @@ export const Services: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
                 className="font-['Manrope'] font-normal leading-[1.38em] max-w-xl mt-4 sm:mt-6"
-                style={{ fontSize: 'clamp(0.9rem, 1.8vw, 1.625rem)', color: '#444444' }}
+                style={{ fontSize: 'clamp(0.9rem, 1.8vw, 1.625rem)', color: '#A3B8B0' }}
               >
                 Evolutra combines owned distribution, advanced targeting, and full-funnel optimization to drive measurable revenue growth.
               </motion.p>
@@ -133,12 +133,12 @@ export const Services: React.FC = () => {
                       <div className="flex items-center justify-between gap-2">
                         <div className="flex items-center gap-3 sm:gap-4 md:gap-6 min-w-0">
                           {React.createElement(SERVICE_ICONS[service.id] || Mail, {
-                            className: `w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-colors duration-300 ${isActive ? 'text-[#C4A24B]' : 'text-[#525252]'}`,
+                            className: `w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-colors duration-300 ${isActive ? 'text-[#C4A24B]' : 'text-[#7A9088]'}`,
                           })}
                           <h4
                             className="text-base sm:text-lg md:text-xl lg:text-[1.875rem] font-['Oswald'] uppercase font-bold transition-colors duration-300 leading-[1.2em]"
                             style={{
-                              color: '#1B7E65',
+                              color: isActive ? '#6BC4A8' : '#5A9B86',
                             }}
                           >
                             {service.title}
