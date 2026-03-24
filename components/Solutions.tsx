@@ -157,8 +157,8 @@ export const Solutions: React.FC = () => {
         </div>
       </section>
 
-      {/* ── SECTION 2 ── The Solution — light #CEE8DE (matches TrustedBy) */}
-      <section className="py-20 sm:py-28 md:py-36 px-6 md:px-12 bg-[#CEE8DE]">
+      {/* ── SECTION 2 ── The Solution — dark #041814 (matches home) */}
+      <section className="py-20 sm:py-28 md:py-36 px-6 md:px-12 bg-[#041814]">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
 
@@ -173,7 +173,7 @@ export const Solutions: React.FC = () => {
               <span
                 className="inline-block mb-6 px-5 py-[5px] rounded-full"
                 style={{
-                  border: '1px solid rgba(4, 24, 20, 0.25)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
                   backdropFilter: 'blur(6px)',
                   fontFamily: "'Rajdhani', sans-serif",
                   fontWeight: 600,
@@ -185,7 +185,7 @@ export const Solutions: React.FC = () => {
               >
                 ( THE SOLUTION )
               </span>
-              <h2 className="font-['DM_Sans'] text-3xl sm:text-4xl md:text-5xl font-bold uppercase leading-tight mb-6 text-[#041814]">
+              <h2 className="font-['DM_Sans'] text-3xl sm:text-4xl md:text-5xl font-bold uppercase leading-tight mb-6 text-[#E8EDEA]">
                 Smarter Distribution. Better Targeting.
               </h2>
               <h3
@@ -193,12 +193,12 @@ export const Solutions: React.FC = () => {
                 style={{
                   fontFamily: "'Playfair Display', Georgia, serif",
                   fontStyle: 'italic',
-                  color: '#041814',
+                  color: '#E8EDEA',
                 }}
               >
                 Real Results.
               </h3>
-              <p className="font-['Manrope'] text-base sm:text-lg leading-relaxed" style={{ color: '#444444' }}>
+              <p className="font-['Manrope'] text-base sm:text-lg leading-relaxed" style={{ color: '#A3B8B0' }}>
                 At Evolutra, our approach focuses on understanding consumer behavior and delivering marketing that feels relevant instead of intrusive.
               </p>
             </motion.div>
@@ -206,7 +206,7 @@ export const Solutions: React.FC = () => {
             {/* Right Column: Feature Grid */}
             <div className="w-full lg:w-2/3">
               {/* Row 1 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 border-b border-[#041814]/10">
+              <div className="grid grid-cols-1 md:grid-cols-2 border-b border-white/15">
                 {[
                   {
                     icon: Crosshair,
@@ -225,15 +225,15 @@ export const Solutions: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className={`p-8 md:p-10 border-t border-[#041814]/10 ${i === 0 ? 'md:border-r md:border-[#041814]/10' : ''}`}
+                    className={`p-8 md:p-10 border-t border-white/15 ${i === 0 ? 'md:border-r md:border-white/15' : ''}`}
                   >
                     <div className="w-12 h-12 rounded-full bg-[#C4A24B]/10 flex items-center justify-center mb-6 border border-[#C4A24B]/30">
                       <item.icon className="w-5 h-5 text-[#C4A24B]" />
                     </div>
-                    <h4 className="font-['Oswald'] text-xl md:text-2xl font-bold uppercase mb-3 text-[#041814]">
+                    <h4 className="font-['Oswald'] text-xl md:text-2xl font-bold uppercase mb-3 text-[#E8EDEA]">
                       {item.title}
                     </h4>
-                    <p className="font-['Manrope'] text-base leading-relaxed" style={{ color: '#444444' }}>
+                    <p className="font-['Manrope'] text-base leading-relaxed" style={{ color: '#A3B8B0' }}>
                       {item.description}
                     </p>
                   </motion.div>
@@ -241,7 +241,7 @@ export const Solutions: React.FC = () => {
               </div>
 
               {/* Row 2 */}
-              <div className="grid grid-cols-1 md:grid-cols-2 border-b border-[#041814]/10">
+              <div className="grid grid-cols-1 md:grid-cols-2 border-b border-white/15">
                 {[
                   {
                     icon: BarChart2,
@@ -260,15 +260,15 @@ export const Solutions: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className={`p-8 md:p-10 border-t border-[#041814]/10 ${i === 0 ? 'md:border-r md:border-[#041814]/10' : ''}`}
+                    className={`p-8 md:p-10 border-t border-white/15 ${i === 0 ? 'md:border-r md:border-white/15' : ''}`}
                   >
                     <div className="w-12 h-12 rounded-full bg-[#C4A24B]/10 flex items-center justify-center mb-6 border border-[#C4A24B]/30">
                       <item.icon className="w-5 h-5 text-[#C4A24B]" />
                     </div>
-                    <h4 className="font-['Oswald'] text-xl md:text-2xl font-bold uppercase mb-3 text-[#041814]">
+                    <h4 className="font-['Oswald'] text-xl md:text-2xl font-bold uppercase mb-3 text-[#E8EDEA]">
                       {item.title}
                     </h4>
-                    <p className="font-['Manrope'] text-base leading-relaxed" style={{ color: '#444444' }}>
+                    <p className="font-['Manrope'] text-base leading-relaxed" style={{ color: '#A3B8B0' }}>
                       {item.description}
                     </p>
                   </motion.div>
@@ -281,11 +281,11 @@ export const Solutions: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="p-8 md:p-10 border-t border-[#041814]/10"
+                className="p-8 md:p-10 border-t border-white/15"
               >
                 <p
                   className="text-xl sm:text-2xl leading-relaxed"
-                  style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: 'italic', color: '#041814' }}
+                  style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: 'italic', color: '#E8EDEA' }}
                 >
                   The result is marketing that feels personal, measurable, and scalable.
                 </p>
@@ -523,12 +523,12 @@ const FULL_SERVICE_ITEMS = [
   },
 ];
 
-// Section 4 — light bg #CEE8DE
+// Section 4 — dark bg #041814
 const FullServiceSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 sm:py-28 md:py-36 px-6 md:px-12 bg-[#CEE8DE]">
+    <section className="py-20 sm:py-28 md:py-36 px-6 md:px-12 bg-[#041814]">
       <div className="container mx-auto">
 
         {/* Top centered heading */}
@@ -539,12 +539,12 @@ const FullServiceSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 md:mb-20 max-w-3xl mx-auto"
         >
-          <h2 className="font-['DM_Sans'] text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-tight mb-6 text-[#041814]">
+          <h2 className="font-['DM_Sans'] text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-tight mb-6 text-[#E8EDEA]">
             End-to-End{' '}
             <span style={{ color: '#C4A24B' }}>Email Marketing</span>{' '}
             Solutions
           </h2>
-          <p className="font-['Manrope'] text-base sm:text-lg leading-relaxed" style={{ color: '#444444' }}>
+          <p className="font-['Manrope'] text-base sm:text-lg leading-relaxed" style={{ color: '#A3B8B0' }}>
             Evolutra provides a complete set of services designed to help brands scale customer acquisition and engagement through intelligent email marketing.
           </p>
         </motion.div>
@@ -567,7 +567,7 @@ const FullServiceSection: React.FC = () => {
             />
           </motion.div>
 
-          {/* Right: Accordion — dark-on-light styling */}
+          {/* Right: Accordion — light-on-dark styling */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -583,8 +583,8 @@ const FullServiceSection: React.FC = () => {
                   key={i}
                   className={`rounded-xl border transition-all duration-300 overflow-hidden ${
                     isOpen
-                      ? 'border-[#C4A24B]/50 bg-[#C4A24B]/10'
-                      : 'border-[#041814]/10 bg-[#041814]/5 hover:border-[#041814]/20'
+                      ? 'border-[#C4A24B]/60 bg-[#C4A24B]/12'
+                      : 'border-white/15 bg-white/[0.04] hover:border-white/25'
                   }`}
                 >
                   <button
@@ -592,14 +592,14 @@ const FullServiceSection: React.FC = () => {
                     className="w-full flex items-center justify-between gap-4 px-5 py-5 text-left"
                   >
                     <div className="flex items-center gap-4">
-                      <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-colors duration-300 ${isOpen ? 'bg-[#C4A24B]/20' : 'bg-[#041814]/10'}`}>
-                        <IconComp className={`w-5 h-5 transition-colors duration-300 ${isOpen ? 'text-[#C4A24B]' : 'text-[#041814]/50'}`} />
+                      <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-colors duration-300 ${isOpen ? 'bg-[#C4A24B]/20' : 'bg-white/10'}`}>
+                        <IconComp className={`w-5 h-5 transition-colors duration-300 ${isOpen ? 'text-[#C4A24B]' : 'text-white/70'}`} />
                       </div>
-                      <span className={`font-['Oswald'] text-base sm:text-lg font-bold uppercase tracking-wide transition-colors duration-300 ${isOpen ? 'text-[#041814]' : 'text-[#041814]/70 group-hover:text-[#041814]'}`}>
+                      <span className={`font-['Oswald'] text-base sm:text-lg font-bold uppercase tracking-wide transition-colors duration-300 ${isOpen ? 'text-[#E8EDEA]' : 'text-white/80 group-hover:text-white'}`}>
                         {item.title}
                       </span>
                     </div>
-                    <ChevronDown className={`w-4 h-4 shrink-0 transition-all duration-300 ${isOpen ? 'rotate-180 text-[#C4A24B]' : 'text-[#041814]/30'}`} />
+                    <ChevronDown className={`w-4 h-4 shrink-0 transition-all duration-300 ${isOpen ? 'rotate-180 text-[#C4A24B]' : 'text-white/40'}`} />
                   </button>
                   <AnimatePresence initial={false}>
                     {isOpen && (
@@ -611,7 +611,7 @@ const FullServiceSection: React.FC = () => {
                         className="overflow-hidden"
                       >
                         <div className="px-5 pb-5 pl-[4.25rem]">
-                          <p className="font-['Manrope'] text-sm sm:text-base leading-relaxed" style={{ color: '#444444' }}>
+                          <p className="font-['Manrope'] text-sm sm:text-base leading-relaxed" style={{ color: '#A3B8B0' }}>
                             {item.description}
                           </p>
                         </div>

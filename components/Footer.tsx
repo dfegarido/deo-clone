@@ -245,7 +245,7 @@ export const Footer: React.FC<FooterProps> = ({ onBecomePartner }) => {
             lineHeight: '15px',
             letterSpacing: '1px',
             textTransform: 'uppercase',
-            color: '#262626',
+            color: '#9CA3AF',
             textAlign: 'center',
           }}
         >
