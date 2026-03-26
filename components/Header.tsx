@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
-import evolutraLogo from '../assets/Evolutra_logo_in_gradient_colors-removebg-preview.png';
+import evolutraLogo from '../assets/evolutra logo.png';
 
 interface HeaderProps {
   onGetInTouch: () => void;

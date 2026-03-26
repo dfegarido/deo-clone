@@ -177,10 +177,16 @@ export const Footer: React.FC<FooterProps> = ({ onBecomePartner }) => {
               Social
             </h4>
             <div className="flex gap-6">
-              {['Instagram', 'LinkedIn', 'Twitter'].map((platform) => (
+              {[
+                { label: 'Instagram', href: 'https://www.instagram.com/' },
+                { label: 'LinkedIn', href: 'https://www.linkedin.com/company/evolutra-digital/posts/?feedView=all' },
+                { label: 'Twitter', href: 'https://x.com/' },
+              ].map((platform) => (
                 <a
-                  key={platform}
-                  href="#"
+                  key={platform.label}
+                  href={platform.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                   style={{
                     fontFamily: "'Space Mono', monospace",
@@ -192,7 +198,7 @@ export const Footer: React.FC<FooterProps> = ({ onBecomePartner }) => {
                     color: '#6B7280',
                   }}
                 >
-                  {platform}
+                  {platform.label}
                 </a>
               ))}
             </div>
