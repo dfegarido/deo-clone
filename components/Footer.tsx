@@ -180,7 +180,7 @@ export const Footer: React.FC<FooterProps> = ({ onBecomePartner }) => {
               {[
                 { label: 'Instagram', href: 'https://www.instagram.com/' },
                 { label: 'LinkedIn', href: 'https://www.linkedin.com/company/evolutra-digital/posts/?feedView=all' },
-                { label: 'Twitter', href: 'https://x.com/' },
+                { label: 'Twitter', href: 'https://x.com/evolutra?s=21' },
               ].map((platform) => (
                 <a
                   key={platform.label}

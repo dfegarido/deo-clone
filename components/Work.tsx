@@ -1,6 +1,17 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
+import himsHers1 from '../assets/Hims&Hers 1.png';
+import himsHers2 from '../assets/Hims&Hers 2.png';
+import lendingTree1 from '../assets/LendingTree 1.png';
+import lendingTree2 from '../assets/LendingTree 2.png';
+import samsClub1 from "../assets/Sam's Club 1.png";
+import samsClub2 from "../assets/Sam's Club 2.png";
+import truGreen1 from '../assets/TruGreen 1.png';
+import truGreen2 from '../assets/TruGreen 1 (2).png';
+import vivint1 from '../assets/Vivint 1.png';
+import vivint2 from '../assets/Vivint 2.png';
+
 interface CaseStudy {
   brand: string;
   subtitle: string;
@@ -23,8 +34,8 @@ const CASE_STUDIES: CaseStudy[] = [
       { val: "2K+", text: "Qualified Leads" },
       { val: "$11M", text: "In Revenue" },
     ],
-    leftImage: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop",
-    rightImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop",
+    leftImage: himsHers1,
+    rightImage: himsHers2,
   },
   {
     brand: 'Advertiser #2',
@@ -38,8 +49,8 @@ const CASE_STUDIES: CaseStudy[] = [
       { val: "19%", text: "CTR Improvement" },
       { val: "$4.8M", text: "Attributed Revenue" },
     ],
-    leftImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop",
-    rightImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+    leftImage: lendingTree1,
+    rightImage: lendingTree2,
   },
   {
     brand: 'Advertiser #3',
@@ -53,8 +64,8 @@ const CASE_STUDIES: CaseStudy[] = [
       { val: "$7.2M", text: "Recovered Revenue" },
       { val: "3.8X", text: "LTV Increase" },
     ],
-    leftImage: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop",
-    rightImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
+    leftImage: samsClub1,
+    rightImage: samsClub2,
   },
   {
     brand: 'Advertiser #4',
@@ -68,8 +79,8 @@ const CASE_STUDIES: CaseStudy[] = [
       { val: "91%", text: "Contact Rate" },
       { val: "$9.1M", text: "Pipeline Generated" },
     ],
-    leftImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
-    rightImage: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop",
+    leftImage: truGreen1,
+    rightImage: truGreen2,
   },
   {
     brand: 'Advertiser #5',
@@ -83,8 +94,8 @@ const CASE_STUDIES: CaseStudy[] = [
       { val: "$6.3M", text: "Revenue Driven" },
       { val: "2.1X", text: "Creative Performance" },
     ],
-    leftImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop",
-    rightImage: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=500&auto=format&fit=crop",
+    leftImage: vivint1,
+    rightImage: vivint2,
   },
 ];
 
