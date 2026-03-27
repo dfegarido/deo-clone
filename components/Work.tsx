@@ -1,22 +1,22 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-import himsHers1 from '../assets/Hims&Hers 1.png';
-import himsHers2 from '../assets/Hims&Hers 2.png';
-import lendingTree1 from '../assets/LendingTree 1.png';
-import lendingTree2 from '../assets/LendingTree 2.png';
-import samsClub1 from "../assets/Sam's Club 1.png";
-import samsClub2 from "../assets/Sam's Club 2.png";
-import truGreen1 from '../assets/TruGreen 1.png';
-import truGreen2 from '../assets/TruGreen 1 (2).png';
-import vivint1 from '../assets/Vivint 1.png';
-import vivint2 from '../assets/Vivint 2.png';
+import himsHers1 from '../assets/Hims&Hers 1.webp';
+import himsHers2 from '../assets/Hims&Hers 2.webp';
+import lendingTree1 from '../assets/LendingTree 1.webp';
+import lendingTree2 from '../assets/LendingTree 2.webp';
+import samsClub1 from "../assets/Sam's Club 1.webp";
+import samsClub2 from "../assets/Sam's Club 2.webp";
+import truGreen1 from '../assets/TruGreen 1.webp';
+import truGreen2 from '../assets/TruGreen 1 (2).webp';
+import vivint1 from '../assets/Vivint 1.webp';
+import vivint2 from '../assets/Vivint 2.webp';
 
-import brandLogoHims from '../assets/Hims&Hers.png';
-import brandLogoLending from '../assets/Lending Tree.png';
-import brandLogoSams from "../assets/Sam's Club.png";
-import brandLogoTruGreen from '../assets/Trugreen.png';
-import brandLogoVivint from '../assets/Vivint.png';
+import brandLogoHims from '../assets/Hims&Hers.webp';
+import brandLogoLending from '../assets/Lending Tree.webp';
+import brandLogoSams from "../assets/Sam's Club.webp";
+import brandLogoTruGreen from '../assets/Trugreen.webp';
+import brandLogoVivint from '../assets/Vivint.webp';
 
 interface CaseStudy {
   brand: string;
@@ -113,7 +113,6 @@ const CASE_STUDIES: CaseStudy[] = [
 
 const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
   const blockRef = useRef<HTMLDivElement>(null);
-  const [sideLoaded, setSideLoaded] = useState({ left: false, right: false });
 
   const { scrollYProgress } = useScroll({
     target: blockRef,
@@ -142,23 +141,16 @@ const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
                 style={{ x: leftX, rotate: leftRotate }}
                 className="absolute left-[5%] md:left-[10%] w-[45%] md:w-[35%] h-[500px] md:h-[700px] z-20 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl hidden md:block will-change-transform"
             >
-                <div className="relative w-full h-full bg-[#0d1814]">
-                    {!sideLoaded.left && (
-                      <div
-                        className="absolute inset-0 z-[1] animate-pulse bg-gradient-to-br from-white/[0.06] to-white/[0.02]"
-                        aria-hidden
-                      />
-                    )}
+                <div className="relative w-full h-full">
                     <img
             src={study.leftImage}
                         alt={`${study.brand} — visual 1`}
                         loading="lazy"
                         decoding="async"
                         fetchPriority="low"
-                        onLoad={() => setSideLoaded((s) => ({ ...s, left: true }))}
-                        className={`relative z-[2] w-full h-full object-cover brightness-75 scale-110 transition-opacity duration-500 ${sideLoaded.left ? 'opacity-100' : 'opacity-0'}`}
+                        className="w-full h-full object-cover brightness-75 scale-110"
                     />
-                    <div className="absolute inset-0 z-[3] bg-gradient-to-r from-black/60 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
                 </div>
             </motion.div>
 
@@ -167,23 +159,16 @@ const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
                 style={{ x: rightX, rotate: rightRotate }}
                 className="absolute right-[5%] md:right-[10%] w-[45%] md:w-[35%] h-[500px] md:h-[700px] z-20 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl hidden md:block will-change-transform"
             >
-                <div className="relative w-full h-full bg-[#0d1814]">
-                    {!sideLoaded.right && (
-                      <div
-                        className="absolute inset-0 z-[1] animate-pulse bg-gradient-to-br from-white/[0.06] to-white/[0.02]"
-                        aria-hidden
-                      />
-                    )}
+                <div className="relative w-full h-full">
                     <img
             src={study.rightImage}
                         alt={`${study.brand} — visual 2`}
                         loading="lazy"
                         decoding="async"
                         fetchPriority="low"
-                        onLoad={() => setSideLoaded((s) => ({ ...s, right: true }))}
-                        className={`relative z-[2] w-full h-full object-cover brightness-75 scale-110 transition-opacity duration-500 ${sideLoaded.right ? 'opacity-100' : 'opacity-0'}`}
+                        className="w-full h-full object-cover brightness-75 scale-110"
                     />
-                    <div className="absolute inset-0 z-[3] bg-gradient-to-l from-black/60 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-l from-black/60 to-transparent" />
                 </div>
             </motion.div>
 
