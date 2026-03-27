@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 import himsHers1 from '../assets/Hims&Hers 1.png';
@@ -12,6 +12,12 @@ import truGreen2 from '../assets/TruGreen 1 (2).png';
 import vivint1 from '../assets/Vivint 1.png';
 import vivint2 from '../assets/Vivint 2.png';
 
+import brandLogoHims from '../assets/Hims&Hers.png';
+import brandLogoLending from '../assets/Lending Tree.png';
+import brandLogoSams from "../assets/Sam's Club.png";
+import brandLogoTruGreen from '../assets/Trugreen.png';
+import brandLogoVivint from '../assets/Vivint.png';
+
 interface CaseStudy {
   brand: string;
   subtitle: string;
@@ -19,6 +25,7 @@ interface CaseStudy {
   stats: { val: string; text: string }[];
   leftImage: string;
   rightImage: string;
+  brandLogo: string;
 }
 
 const CASE_STUDIES: CaseStudy[] = [
@@ -36,6 +43,7 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     leftImage: himsHers1,
     rightImage: himsHers2,
+    brandLogo: brandLogoHims,
   },
   {
     brand: 'Advertiser #2',
@@ -51,6 +59,7 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     leftImage: lendingTree1,
     rightImage: lendingTree2,
+    brandLogo: brandLogoLending,
   },
   {
     brand: 'Advertiser #3',
@@ -66,6 +75,7 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     leftImage: samsClub1,
     rightImage: samsClub2,
+    brandLogo: brandLogoSams,
   },
   {
     brand: 'Advertiser #4',
@@ -81,6 +91,7 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     leftImage: truGreen1,
     rightImage: truGreen2,
+    brandLogo: brandLogoTruGreen,
   },
   {
     brand: 'Advertiser #5',
@@ -96,11 +107,13 @@ const CASE_STUDIES: CaseStudy[] = [
     ],
     leftImage: vivint1,
     rightImage: vivint2,
+    brandLogo: brandLogoVivint,
   },
 ];
 
 const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
   const blockRef = useRef<HTMLDivElement>(null);
+  const [sideLoaded, setSideLoaded] = useState({ left: false, right: false });
 
   const { scrollYProgress } = useScroll({
     target: blockRef,
@@ -129,13 +142,23 @@ const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
                 style={{ x: leftX, rotate: leftRotate }}
                 className="absolute left-[5%] md:left-[10%] w-[45%] md:w-[35%] h-[500px] md:h-[700px] z-20 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl hidden md:block will-change-transform"
             >
-                <div className="relative w-full h-full">
-                    <img 
+                <div className="relative w-full h-full bg-[#0d1814]">
+                    {!sideLoaded.left && (
+                      <div
+                        className="absolute inset-0 z-[1] animate-pulse bg-gradient-to-br from-white/[0.06] to-white/[0.02]"
+                        aria-hidden
+                      />
+                    )}
+                    <img
             src={study.leftImage}
-                        alt="Coast" 
-                        className="w-full h-full object-cover brightness-75 scale-110"
+                        alt={`${study.brand} — visual 1`}
+                        loading="lazy"
+                        decoding="async"
+                        fetchPriority="low"
+                        onLoad={() => setSideLoaded((s) => ({ ...s, left: true }))}
+                        className={`relative z-[2] w-full h-full object-cover brightness-75 scale-110 transition-opacity duration-500 ${sideLoaded.left ? 'opacity-100' : 'opacity-0'}`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
+                    <div className="absolute inset-0 z-[3] bg-gradient-to-r from-black/60 to-transparent pointer-events-none" />
                 </div>
             </motion.div>
 
@@ -144,13 +167,23 @@ const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
                 style={{ x: rightX, rotate: rightRotate }}
                 className="absolute right-[5%] md:right-[10%] w-[45%] md:w-[35%] h-[500px] md:h-[700px] z-20 rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl hidden md:block will-change-transform"
             >
-                <div className="relative w-full h-full">
-                    <img 
+                <div className="relative w-full h-full bg-[#0d1814]">
+                    {!sideLoaded.right && (
+                      <div
+                        className="absolute inset-0 z-[1] animate-pulse bg-gradient-to-br from-white/[0.06] to-white/[0.02]"
+                        aria-hidden
+                      />
+                    )}
+                    <img
             src={study.rightImage}
-                        alt="Architecture" 
-                        className="w-full h-full object-cover brightness-75 scale-110"
+                        alt={`${study.brand} — visual 2`}
+                        loading="lazy"
+                        decoding="async"
+                        fetchPriority="low"
+                        onLoad={() => setSideLoaded((s) => ({ ...s, right: true }))}
+                        className={`relative z-[2] w-full h-full object-cover brightness-75 scale-110 transition-opacity duration-500 ${sideLoaded.right ? 'opacity-100' : 'opacity-0'}`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-l from-black/60 to-transparent" />
+                    <div className="absolute inset-0 z-[3] bg-gradient-to-l from-black/60 to-transparent pointer-events-none" />
                 </div>
             </motion.div>
 
@@ -162,19 +195,15 @@ const CaseStudyBlock: React.FC<{ study: CaseStudy }> = ({ study }) => {
                 {/* Brand Logo/Icon */}
                 <div className="flex justify-center mb-8">
                     <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-black shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                            </svg>
+                        <div className="w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden p-1.5 bg-[#0a1f18] border border-white/15 shadow-[0_0_18px_rgba(0,0,0,0.45)]">
+              <img
+                src={study.brandLogo}
+                alt={`${study.brand} brand`}
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                className="max-h-full max-w-full w-auto h-auto object-contain brightness-110 contrast-105"
+              />
                         </div>
             <span
               style={{

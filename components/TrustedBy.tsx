@@ -11,11 +11,8 @@ import saatvaLogo from '../assets/logo_saatva_mattress.jpg';
 import noomLogo from '../assets/Noom-Logo.png';
 import quickenLoansLogo from '../assets/Quicken-loans-stacked.webp';
 import rbaLogo from '../assets/Renewal by Anderson Products _ Renewal by Andersen.png';
-import vivintLogo from '../assets/Vivint.png';
-import himsHersLogo from '../assets/Hims&Hers.png';
-import lendingTreePartnerLogo from '../assets/Lending Tree.png';
-import samsClubPartnerLogo from "../assets/Sam's Club.png";
-import truGreenPartnerLogo from '../assets/Trugreen.png';
+import samsClubLogo from '../assets/Sams-Club-Logo.png';
+import truGreenLogo from '../assets/TruGreen_Primary_Logo_(R)_FullColor_RGB_(2).png';
 import uberLogo from '../assets/Uber_logo_2018.png';
 import warbyParkerLogo from '../assets/Warby_Parker_logo.svg.png';
 import groundedFootwearLogo from '../assets/Grounded Footwear - Step Into Comfort_ Grounded Footwear.png';
@@ -37,9 +34,7 @@ const BASE = import.meta.env.BASE_URL;
 
 const PARTNERS: Partner[] = [
   // Row 1
-  { name: 'Vivint', image: vivintLogo, bgType: 'colored' },
-  { name: 'Hims & Hers', image: himsHersLogo, bgType: 'colored' },
-  { name: 'LendingTree', image: lendingTreePartnerLogo, bgType: 'colored' },
+  { name: 'Vivint', image: `${BASE}assets/vivint-logo.png` },
   { name: 'ADT', image: adtLogo, bgType: 'colored' },
   { name: 'CarShield', image: carShieldLogo, bgType: 'light' },
   { name: 'HelloFresh', image: helloFreshLogo },
@@ -50,8 +45,8 @@ const PARTNERS: Partner[] = [
   { name: 'Renewal by Andersen', image: rbaLogo },
   { name: 'Noom', image: noomLogo },
   { name: 'Quicken Loans', image: quickenLoansLogo },
-  { name: "Sam's Club", image: samsClubPartnerLogo, bgType: 'colored' },
-  { name: 'TruGreen', image: truGreenPartnerLogo, bgType: 'colored' },
+  { name: "Sam's Club", image: samsClubLogo },
+  { name: 'TruGreen', image: truGreenLogo },
   // Row 3
   { name: 'Uber', image: uberLogo },
   { name: 'French Bee', image: frenchbeeLogo },
