@@ -12,6 +12,7 @@ import { Contact } from './components/Contact';
 import { KaraokeHeading } from './components/KaraokeHeading';
 import { Solutions } from './components/Solutions';
 import { JoinUs } from './components/JoinUs';
+import { EmployeeProfile } from './components/EmployeeProfile';
 
 // Smooth scroll implementation helper
 // Note: In a real production app, we would use a library like 'lenis' here
@@ -20,7 +21,7 @@ import { JoinUs } from './components/JoinUs';
 // and Framer Motion for the parallax effects.
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'contact' | 'solutions' | 'join-us'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'contact' | 'solutions' | 'join-us' | 'employee'>('home');
 
   const navigateToContact = () => {
     setCurrentPage('contact');
@@ -52,6 +53,8 @@ function App() {
         setCurrentPage('solutions');
       } else if (hash === '#join-us-page') {
         setCurrentPage('join-us');
+      } else if (hash.startsWith('#employee-page')) {
+        setCurrentPage('employee');
       } else {
         setCurrentPage('home');
       }
@@ -67,8 +70,16 @@ function App() {
       window.history.pushState(null, '', '#solutions-page');
     } else if (currentPage === 'join-us') {
       window.history.pushState(null, '', '#join-us-page');
+    } else if (currentPage === 'employee') {
+      // preserve the ?id= portion once set
+      if (!window.location.hash.startsWith('#employee-page')) {
+        const id = new URLSearchParams(window.location.search).get('id') ?? '';
+        const hash = id ? `#employee-page?id=${encodeURIComponent(id)}` : '#employee-page';
+        window.history.pushState(null, '', hash);
+      }
     } else {
-      if (window.location.hash === '#contact-page' || window.location.hash === '#solutions-page' || window.location.hash === '#join-us-page') {
+      const known = ['#contact-page', '#solutions-page', '#join-us-page', '#employee-page'];
+      if (known.some((h) => window.location.hash.startsWith(h))) {
         window.history.pushState(null, '', '#');
       }
     }
@@ -77,7 +88,7 @@ function App() {
   return (
     <div className="bg-[#041210] min-h-screen text-white selection:bg-[#C4A24B] selection:text-black">
       <Header onGetInTouch={navigateToContact} onLogoClick={navigateToHome} onSolutionsClick={navigateToSolutions} onJoinUsClick={navigateToJoinUs} currentPage={currentPage} />
-      
+
       {currentPage === 'home' ? (
         <>
           <main>
@@ -106,6 +117,10 @@ function App() {
           </main>
           <Footer onBecomePartner={navigateToContact} />
         </>
+      ) : currentPage === 'employee' ? (
+        <main>
+          <EmployeeProfile onBack={navigateToHome} />
+        </main>
       ) : (
         <main>
           <Contact onBack={navigateToHome} />
